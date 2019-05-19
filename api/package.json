@@ -1,0 +1,23 @@
+{
+  "name": "beyond-compassion-repeater",
+  "version": "1.0.0",
+  "private": true,
+  "main": "repeater.js",
+  "scripts": {
+    "dev": "micro-dev",
+    "start": "micro",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "micro": "^9.3.4",
+    "moment": "^2.24.0",
+    "partial.lenses": "^14.17.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
+}

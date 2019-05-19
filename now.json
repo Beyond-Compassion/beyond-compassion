@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "beyond-compassion",
+  "builds": [
+      { "src": "www/package.json", "use": "@now/static-build" },
+      { "src": "api/repeater.js", "use": "@now/node" }
+  ],
+  "routes": [
+    {"src": "/api/repeater", "dest": "/api/repeater.js"},
+    {"src": "/api/(.*)", "dest": "/api/$1"},
+    {"src": "/js/(.*)", "dest": "/www/js/$1"},
+    {"src": "/css/(.*)", "dest": "/www/css/$1"},
+    {"src": "/static/(.*)", "dest": "/www/static/$1"},
+    {"src": "/fonts/(.*)", "dest": "/www/fonts/$1"},
+    {"src": ".*", "dest": "/www/index.html"}
+  ],
+  "alias": "beyond-compassion"
+}

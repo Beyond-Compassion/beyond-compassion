@@ -1,0 +1,19 @@
+{
+  "name": "beyond-compassion",
+  "version": "1.0.0",
+  "description": "website for beyond compassion",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-dev": "cd www && npm run dev",
+    "repeater-dev": "cd api && npm run dev",
+    "dev-all": "concurrently \"npm run client-dev\" \"npm run repeater-dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
