@@ -1,4 +1,4 @@
-﻿{
+﻿const dummy = {
     "pagination":
     {
         "object_count": 14664,
@@ -5718,3 +5718,7 @@
         }
     ]
 }
+
+const getEvents = async () => dummy; 
+
+module.exports = getEvents;
