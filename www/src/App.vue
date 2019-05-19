@@ -20,18 +20,10 @@
       CoreJumbotron: () => import('@/components/core/Jumbotron'),
       CoreToolbar: () => import('@/components/core/Toolbar'),
       CoreView: () => import('@/components/core/View')
-    }
+    },
 
-    // created () {
-    //   this.$eventbriteAPI.get(
-    //     '/events/search/',
-    //     {
-    //       params: {
-    //         categories: 103
-    //       },
-    //       crossdomain: true
-    //     }
-    //   ).then(response => console.log(response))
-    // }
+    created () {
+      this.$repeaterAPI.get('').then(response => console.log(response))
+    }
   }
 </script>

@@ -76,7 +76,10 @@ const Transform = {
   })
 } 
 
-const selectEvents = range => L.collectAs(Transform.selectEvent, Transform.sliceEvents(...range));
+const selectEvents = range => L.collectAs(
+  Transform.selectEvent,
+  Transform.sliceEvents(...range)
+);
 
 // DEBUG:
 // const testSubrange = randomSubrange(0, 50, 5);
@@ -84,10 +87,11 @@ const selectEvents = range => L.collectAs(Transform.selectEvent, Transform.slice
 
 module.exports = async (req, res) => {
   var data = await getEvents();
-
   const slice = randomSlice(0, 50, 5);
-
   data = selectEvents(slice) (data);
 
-  res.end(JSON.stringify(data))
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Content-Type', 'application/json');
+  
+  res.end(JSON.stringify(data));
 }
