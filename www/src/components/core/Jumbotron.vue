@@ -26,7 +26,7 @@
                 />
                 <div
                   v-if="subTitle"
-                  class="subheading white--text"
+                  class="body white--text"
                   v-html="subTitle"
                 />
               </v-flex>
@@ -48,8 +48,9 @@
       titleClass () {
         return {
           'display-1': this.$vuetify.breakpoint.xs,
-          'display-2': this.$vuetify.breakpoint.smAndUp,
-          'white--text': true
+          'display-3': this.$vuetify.breakpoint.smAndUp,
+          'white--text': true,
+          'font-weight-thin': true
         }
       },
 

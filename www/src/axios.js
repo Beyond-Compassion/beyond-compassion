@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-export default function setupAxios () {
-  const repeaterAPIInstance = axios.create({
-    baseURL: process.env.VUE_APP_REPEATER_BASE_URL
-  })
+const repeaterAPIInstance = axios.create({
+  baseURL: process.env.VUE_APP_REPEATER_BASE_URL
+})
 
+export default function setupAxios () {
   Vue.prototype.$repeaterAPI = repeaterAPIInstance
+}
+
+export {
+  setupAxios,
+  repeaterAPIInstance
 }

@@ -23,7 +23,13 @@
     },
 
     created () {
-      this.$repeaterAPI.get('').then(response => console.log(response))
+      // MIKE: dispatch action here
+
+      this.$store.dispatch('getEvents')
+
+      // const { data } = this.$repeaterAPI.get('')
+      // this.data = data
     }
+
   }
 </script>

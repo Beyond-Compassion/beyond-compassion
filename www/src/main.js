@@ -5,9 +5,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
-import setupAxios from './axios'
+import { setupAxios } from './axios'
+import setupFilters from './filters/setup'
 
 setupAxios()
+setupFilters()
 
 Vue.config.productionTip = false
 

@@ -1,9 +1,13 @@
 const L = require('partial.lenses');
 const R = require('ramda');
-const moment = require('moment');
-// const dummy = require('./test/eventbrite-data.js/index.js');
-
-const formatDateString = (date) => moment(date).format('LLL')
+const { Transform } = require ('./lenses.js');
+var getEvents;
+if (process.env.NODE_ENV === 'development') {
+  getEvents = require('./test/eventbrite.js');
+} else {
+  getEvents = require('./axios.js');
+}
+const cur = R.curry;
 
 const randomInt = (min, max) => {
   min = Math.ceil(min);
@@ -13,58 +17,29 @@ const randomInt = (min, max) => {
 
 // will return an invalid range (start will be negative), if length is greater
 // than distance between start and end
-const randomSlice = (arrayStart, arrayEnd, length) => {
-  const subrangeStart = randomInt(arrayStart, arrayEnd - length);
-  return [subrangeStart, subrangeStart + length];
+const randomSliceRange = (arrayStart, arrayEnd, length) => {
+  const sliceStart = randomInt(arrayStart, arrayEnd - length);
+  return [sliceStart, sliceStart + length];
 }
 
-const lenseSelect = R.pipe(
-  R.mapObjIndexed(R.unary(L.get)),
-  R.applySpec,
-)
-
-const Model = {
-  events: ['events'],
-}
-
-// MIKE: i will need to pass the client's local timezone in to format it
-// properly on this server
-const Event = {
-  name: ['name', 'text'],
-  start: ['start', 'local', formatDateString],
-  end: ['end', 'local', formatDateString],
-  url: ['url'],
-  logoUrl: ['logo', 'url'],
-  venue: ['venue'],
-}
-
-const Venue = {
-  address: ['address', 'localized_multi_line_address_display'],
-  name: ['name'],
-}
-
-const Transform = {
-  sliceEvents: (start, end) => L.subseq(start, end, [Model.events, L.elems]),
-  selectEvent: lenseSelect({
-    name: Event.name,
-    url: Event.url,
-    start: Event.start,
-    end: Event.end,
-    venueName: [Event.venue, Venue.name],
-    address: [Event.venue, Venue.address],  
-  })
-} 
-
-const selectEvents = range => L.collectAs(
+const selectEvents = (sliceRange, data) => L.collectAs(
   Transform.selectEvent,
-  Transform.sliceEvents(...range)
+  Transform.sliceEvents(...sliceRange),
+  data,
 );
 
-// DEBUG:
-// const testSlice = randomSlice(0, 50, 5);
-// selectEvents(testSlice) (dummy); // ?
+// TEST:
+if (process.env.NODE_ENV == 'development') {
+  const test = async () => {
+    const dummy = await getEvents();
+    const testSlice = randomSliceRange(0, 50, 5);
+    selectEvents(testSlice, dummy); // ?
+  }
+
+  test();
+}
 
 module.exports = {
-  randomSliceRange: randomSlice,
+  randomSliceRange,
   selectEvents,
 }
