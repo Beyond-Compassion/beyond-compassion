@@ -2,10 +2,9 @@
   <v-toolbar
     v-scroll="onScroll"
     app
-    dark
     dense
     :flat="!isScrolling"
-    :color="!isScrolling ? 'transparent' : 'secondary'"
+    :color="!isScrolling ? 'transparent' : 'greyLightest'"
   >
     <!-- <img
       src="/static/logo-small.svg"
@@ -13,22 +12,33 @@
     > -->
 
     <v-toolbar-title>
-      <span class="title primaryDark--text">
-        Beyond Compassion
-      </span>
+      <router-link
+        class="title primaryLight--text"
+        tag="span"
+        to="/"
+      >
+        <a :style="{ textDecoration: 'none' }">Beyond Compassion</a>
+      </router-link>
+      <span class="title primaryLight--text" />
     </v-toolbar-title>
 
     <v-spacer />
 
-    <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
+    <v-toolbar-items
+      v-if="$vuetify.breakpoint.mdAndUp"
+    >
+      <!-- :active-class="!isScrolling ? 'greyDark--text' : 'primaryDark--text'" -->
       <v-btn
         v-for="(item, i) in items"
         :key="i"
-        :active-class="!isScrolling ? 'primary--text' : undefined"
+        class="button-class"
+        active-class="primaryLight--text"
         :to="item.to"
         flat
       >
-        <span v-text="item.text" />
+        <span
+          v-text="item.text"
+        />
       </v-btn>
     </v-toolbar-items>
     <v-btn
@@ -36,7 +46,9 @@
       icon
       @click="toggleDrawer"
     >
-      <v-icon>mdi-menu</v-icon>
+      <v-icon color="greyDark">
+        mdi-menu
+      </v-icon>
     </v-btn>
   </v-toolbar>
 </template>
@@ -65,3 +77,9 @@
     }
   }
 </script>
+
+<style scoped>
+.button-class {
+  color: #243B53;
+}
+</style>

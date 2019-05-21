@@ -53,10 +53,6 @@
       {
         "to": "/gallery",
         "text": "Gallery"
-      },
-      {
-        "to": "/",
-        "text": "Donate"
       }
     ]
   },

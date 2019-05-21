@@ -1,6 +1,11 @@
 <template>
+  <!-- MIKE: you have to set a resize event listener to reset the cards when a
+breakpoint is hit -->
   <div>
-    <v-container fill-height>
+    <v-container
+      fill-height
+      class="greyDark--text"
+    >
       <v-layout
         justify-center
         align-center
@@ -60,9 +65,11 @@
                   sm6
                   lg4
                 >
-                  <v-card class="ma-2">
+                  <v-card
+                    class="ma-2 greyDark--text"
+                    color="greyLightest"
+                  >
                     <v-img
-                      class="white--text"
                       :src="event.thumbnail"
                     />
                     <v-card-title>
@@ -71,22 +78,25 @@
                       </span>
                     </v-card-title>
                     <v-card-text>
-                      <span class="grey--text">Starts {{ event.start }}</span><br>
-                      <span class="grey--text">Ends {{ event.end }}</span><br><br>
+                      <span class="greyLight--text">Starts {{ event.start }}</span><br>
+                      <span class="greyLight--text">Ends {{ event.end }}</span><br><br>
                       <span
                         v-for="line in event.address"
                         :key="line"
+                        class="greyLight--text"
                         v-html="`<span>${line}</span><br>`"
                       />
                     </v-card-text>
                     <v-card-actions>
                       <v-spacer />
                       <v-btn
-                        color="accent"
+                        class="primaryLight--text"
                         flat
                         :href="event.url"
                         target="_blank"
                         :ripple="false"
+                        dark
+                        large
                       >
                         more info
                       </v-btn>
@@ -132,24 +142,30 @@
                 <v-card-actions>
                   <!-- back button -->
                   <v-btn
-                    outline
+                    flat
+                    large
                     left
                     color="primaryDark"
                     @click="prev"
                   >
-                    <v-icon>mdi-chevron-left</v-icon>
+                    <v-icon x-large>
+                      mdi-chevron-left
+                    </v-icon>
                   </v-btn>
 
                   <v-spacer />
 
                   <!-- forward button -->
                   <v-btn
-                    outline
+                    flat
+                    large
                     right
                     color="primaryDark"
                     @click="next"
                   >
-                    <v-icon>mdi-chevron-right</v-icon>
+                    <v-icon x-large>
+                      mdi-chevron-right
+                    </v-icon>
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -183,7 +199,8 @@
     >
       <v-container
         fill-height
-        grid-list-xs
+        :grid-list-xs="$vuetify.breakpoint.smAndDown"
+        :grid-list-xl="$vuetify.breakpoint.mdAndUp"
       >
         <v-layout
           align-end
@@ -192,7 +209,7 @@
           <v-flex
             xs12
             sm6
-            xl4
+            xl5
           >
             <v-card
               color="transparent"
@@ -206,10 +223,10 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn
-                  color="accent"
+                  color="accentLight"
                   flat
                 >
-                  more info
+                  view gallery
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -347,5 +364,9 @@
 
 .alpha-testimonial__footer-bar {
   height: 2px !important;
+}
+
+.v-navigation-drawer .v-list__tile:not(.v-list__tile--active) {
+  color: #243B53
 }
 </style>

@@ -8,19 +8,34 @@ import 'vuetify/src/stylus/app.styl'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#F7C948',
+    // primary: '#F7C948',
+
+    // // MIKE: replace above with:
+    // primaryLight: '#F7C948',
+    // primaryDark: '#40C3F7',
+
+    primary: '#2680C2',
 
     // MIKE: replace above with:
-    primaryLight: '#F7C948',
-    primaryDark: '#F0B429',
+    primaryLight: '#2680C2',
+    primaryDark: '#186FAF', // #186FAF = rgba(24, 111, 175, 1)
 
-    secondary: '#515151', // NOTE: used as a grey right now - rename to grey and replace with new greys
+    secondary: '#243B53', // NOTE: used as a grey right now - rename to grey and replace with new greys
 
-    accent: '#40C3F7',
+    greyDark: '#243B53',
+    greyLight: '#829AB1',
+    greyLightest: '#F0F4F8',
 
-    // MIKE: replace above with:
-    // accentLight: '#40C3F7',
-    // accentDark: '#2BB0ED',
+    // accent: '#40C3F7',
+    // accent: '#CB6E17',
+    accent: '#F0B429',
+
+    // accentLight: '#DE911D', // #DE911D = rgba(222, 145, 29, 1)
+    accentLight: '#F0B429', // #F0B429 = rgb(240, 180, 41, 1)
+    accentLighter: '#F7C948',
+    // accentDark: '#CB6E17', // #CB6E17 = rgba(203, 110, 23, 1)
+    accentDark: '#F0B429',
+    accentDarker: '#B44D12', // #B44D12 = rgba(180, 77, 18, 1)
 
     error: '#E12D39',
 

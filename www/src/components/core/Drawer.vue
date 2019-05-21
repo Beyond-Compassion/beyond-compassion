@@ -1,11 +1,10 @@
 <template>
   <v-navigation-drawer
     v-model="inputValue"
-    class="secondary"
+    class="greyLightest greyDark--text"
     temporary
     right
     fixed
-    dark
   >
     <v-list>
       <v-list-tile>
@@ -14,7 +13,7 @@
           icon
           @click="toggleDrawer"
         >
-          <v-icon>mdi-close</v-icon>
+          <v-icon color="greyDark">mdi-close</v-icon>
         </v-btn>
       </v-list-tile>
       <v-list-tile

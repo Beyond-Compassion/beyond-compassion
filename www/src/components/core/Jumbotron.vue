@@ -1,11 +1,13 @@
 <template>
   <v-fade-transition mode="out-in">
+    <!-- gradient="to top, rgba(240, 180, 41, .6), rgba(43, 176, 237, .7)" -->
+    <!-- gradient="to bottom, rgb(240, 180, 41, .9), rgba(24, 111, 175, .2) 40%" -->
     <v-img
       v-if="namespace"
       :key="$route.path"
       :src="heroImage"
-      height="55vh"
-      gradient="to top, rgba(240, 180, 41, .6), rgba(43, 176, 237, .7)"
+      :height="$vuetify.breakpoint.mdAndDown ? '55vh' : '70vh'"
+      gradient="to bottom, rgba(255, 255, 255, .9), rgba(24, 111, 175, .55) 70%"
       position="bottom"
     >
       <v-fade-transition mode="out-in">
