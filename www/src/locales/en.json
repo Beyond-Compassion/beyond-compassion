@@ -55,16 +55,8 @@
         "text": "Gallery"
       },
       {
-        "to": "/services",
-        "text": "Services"
-      },
-      {
-        "to": "/projects",
-        "text": "Projects"
-      },
-      {
-        "to": "/contact",
-        "text": "Contact"
+        "to": "/",
+        "text": "Donate"
       }
     ]
   },

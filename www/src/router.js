@@ -18,19 +18,8 @@ const router = new Router({
       component: () => import('@/views/Gallery')
     },
     {
-      path: '/services',
-      name: 'Services',
-      component: () => import('@/views/Services')
-    },
-    {
-      path: '/projects',
-      name: 'Projects',
-      component: () => import('@/views/Projects')
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: () => import('@/views/Contact')
+      path: '/',
+      name: 'Donate'
     }
   ]
 })
