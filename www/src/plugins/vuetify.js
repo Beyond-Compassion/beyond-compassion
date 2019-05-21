@@ -33,6 +33,7 @@ Vue.use(Vuetify, {
     // accentLight: '#DE911D', // #DE911D = rgba(222, 145, 29, 1)
     accentLight: '#F0B429', // #F0B429 = rgb(240, 180, 41, 1)
     accentLighter: '#F7C948',
+    accentLightest: '#FADB5F',
     // accentDark: '#CB6E17', // #CB6E17 = rgba(203, 110, 23, 1)
     accentDark: '#F0B429',
     accentDarker: '#B44D12', // #B44D12 = rgba(180, 77, 18, 1)

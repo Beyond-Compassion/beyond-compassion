@@ -27,7 +27,7 @@
     <v-toolbar-items
       v-if="$vuetify.breakpoint.mdAndUp"
     >
-      <!-- :active-class="!isScrolling ? 'greyDark--text' : 'primaryDark--text'" -->
+      <!-- navigation buttons -->
       <v-btn
         v-for="(item, i) in items"
         :key="i"
@@ -39,6 +39,16 @@
         <span
           v-text="item.text"
         />
+      </v-btn>
+
+      <!-- donate button -->
+      <v-btn
+        depressed
+        color="accentLighter cta"
+        class="greyDark--text"
+        :ripple="{ class: 'primaryLight--text' }"
+      >
+        donate
       </v-btn>
     </v-toolbar-items>
     <v-btn

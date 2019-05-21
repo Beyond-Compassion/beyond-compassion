@@ -11,7 +11,7 @@ breakpoint is hit -->
         align-center
         wrap
       >
-        <!-- quote -->
+<!-- quote -->
         <v-flex
           v-for="(testimonial, i) in testimonials.slice(0,1)"
           :key="i"
@@ -40,13 +40,13 @@ breakpoint is hit -->
         <!-- event carousel -->
         <v-flex
           v-if="!loading"
-          class="mt-3"
+          class=""
           :style="{ height: '100%' }"
           xs12
         >
           <event-carousel
-            :window="window"
             :event-groups="eventGroups"
+            :window-length="windowLength"
           />
         </v-flex>
 
@@ -62,15 +62,20 @@ breakpoint is hit -->
           />
         </v-flex>
 
-        <!-- event carousel controls -->
+        <!-- calendar CTA -->
         <v-flex
-          xs12
-          class="mt-4 mb-5 pb-5"
+          x12
+          class="text-xs-center mt-4 mb-5 pb-5"
         >
-          <carousel-controls
-            @prev="prev"
-            @next="next"
-          />
+          <v-btn
+            depressed
+            large
+            color="accentLighter"
+            class="greyDark--text cta"
+            :ripple="{ class: 'primaryLight--text' }"
+          >
+            view calendar
+          </v-btn>
         </v-flex>
 
         <!-- projects title -->
@@ -144,7 +149,7 @@ breakpoint is hit -->
         }
       },
 
-      eventGroupLength () {
+      windowGroupLength () {
         if (this.$vuetify.breakpoint.xs) {
           return 1
         } else if (this.$vuetify.breakpoint.mdAndDown) {
@@ -158,29 +163,15 @@ breakpoint is hit -->
         // MIKE: 5 happens to be the number of results im generating on the
         // server - this is placeholder so dont use a magic number when u
         // actually implement the real thing
-        return 5 / Math.ceil(this.eventGroupLength)
+        return Math.ceil(5 / this.windowGroupLength)
       },
 
       eventGroups () {
-        return R.splitEvery(this.eventGroupLength, this.events)
+        return R.splitEvery(this.windowGroupLength, this.events)
       },
 
       testimonials () {
         return this.$t('Home.testimonials')
-      }
-    },
-
-    methods: {
-      next () {
-        this.window = this.window + 1 === this.windowLength
-          ? 0
-          : this.window + 1
-      },
-
-      prev () {
-        this.window = this.window - 1 < 0
-          ? this.windowLength - 1
-          : this.window - 1
       }
     }
   }
@@ -199,5 +190,9 @@ breakpoint is hit -->
 
 .v-navigation-drawer .v-list__tile:not(.v-list__tile--active) {
   color: #243B53
+}
+
+.v-btn--active.cta:before, .v-btn.cta:hover:before, .v-btn.cta:focus:before {
+  background-color: #B44D12
 }
 </style>

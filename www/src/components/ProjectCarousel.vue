@@ -37,10 +37,12 @@
             </v-card-text>
             <v-card-actions>
               <v-btn
-                color="accentLight"
-                flat
+                color="accentLighter"
+                class="greyDark--text cta"
+                :ripple="{ class: 'primaryLight--text' }"
+                depressed
               >
-                view gallery
+                learn more
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -56,7 +58,7 @@
   export default {
     props: {
       projects: {
-        type: String,
+        type: Array,
         required: true
       }
     },
