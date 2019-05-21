@@ -344,4 +344,8 @@
   bottom: unset !important;
   top: 10px !important;
 }
+
+.alpha-testimonial__footer-bar {
+  height: 2px !important;
+}
 </style>
