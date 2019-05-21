@@ -13,6 +13,11 @@ const router = new Router({
       component: () => import('@/views/Home')
     },
     {
+      path: '/gallery',
+      name: 'Gallery',
+      component: () => import('@/views/Gallery')
+    },
+    {
       path: '/services',
       name: 'Services',
       component: () => import('@/views/Services')

@@ -27,15 +27,15 @@
           xs12
           class="mt-3 mb-4 text-xs-center"
         >
-          <span class="display-3 font-weight-thin">
-            {{ 'events' | titleCase }}
+          <span :class="titleClass">
+            {{ 'upcoming events' | titleCase }}
           </span>
         </v-flex>
 
         <!-- card carousel -->
         <v-flex
           v-if="!loading"
-          class="mt-4"
+          class="mt-3"
           :style="{ height: '100%' }"
           xs12
         >
@@ -52,12 +52,13 @@
                 wrap
                 justify-center
               >
-                <!-- cards -->
+                <!-- text -->
                 <v-flex
                   v-for="event in eventGroup"
                   :key="event.name"
-                  xs6
-                  md4
+                  xs12
+                  sm6
+                  lg4
                 >
                   <v-card class="ma-2">
                     <v-img
@@ -112,14 +113,18 @@
         <!-- card carousel controls -->
         <v-flex
           xs12
-          class="mt-5"
+          class="mt-4 mb-5 pb-5"
         >
           <v-layout
             row
             wrap
             justify-center
           >
-            <v-flex xs3>
+            <v-flex
+              xs10
+              sm6
+              lg3
+            >
               <v-card
                 color="transparent"
                 class="elevation-0"
@@ -128,6 +133,7 @@
                   <!-- back button -->
                   <v-btn
                     outline
+                    left
                     color="primaryDark"
                     @click="prev"
                   >
@@ -139,6 +145,7 @@
                   <!-- forward button -->
                   <v-btn
                     outline
+                    right
                     color="primaryDark"
                     @click="next"
                   >
@@ -149,36 +156,63 @@
             </v-flex>
           </v-layout>
         </v-flex>
+
+        <!-- photo carousel title -->
+        <v-flex
+          xs12
+          class="mt-3 text-xs-center"
+        >
+          <span :class="titleClass">
+            {{ 'past events' | titleCase }}
+          </span>
+        </v-flex>
       </v-layout>
     </v-container>
 
     <alpha-hero
-      :height="$vuetify.breakpoint.mdAndUp ? 500 : 'auto'"
+      gradient="to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1)"
+      :height="$vuetify.breakpoint.mdAndUp ? 800 : 600"
       :jumbotron="false"
-      :items="items"
-      class="mt-5"
+      :items="pastEventPhotos"
+      :delimiter-icon="$vuetify.icons.delimiter"
+      :hide-controls="true"
+      class="mt-3"
       dark
-      gradient="to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)"
+      :cycle="false"
+      @change="setPastEventIndex"
     >
       <v-container
         fill-height
-        grid-list-xl
+        grid-list-xs
       >
         <v-layout
-          align-center
-          justify-space-around
+          align-end
           wrap
         >
           <v-flex
-            xs10
-            md6
+            xs12
+            sm6
+            xl4
           >
-            <alpha-testimonial
-              :author="testimonials[2].author"
-              :title="testimonials[2].title"
-              :quote="testimonials[2].quote"
-              dark
-            />
+            <v-card
+              color="transparent"
+              class="elevation-0"
+            >
+              <v-card-title class="pb-0">
+                <span class="headline">{{ pastEvent.name | titleCase }}</span>
+              </v-card-title>
+              <v-card-text>
+                <span class="body-1">{{ pastEvent.description }}</span>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn
+                  color="accent"
+                  flat
+                >
+                  more info
+                </v-btn>
+              </v-card-actions>
+            </v-card>
           </v-flex>
         </v-layout>
       </v-container>
@@ -192,25 +226,82 @@
 
   export default {
     metaInfo: {
-      title: 'Vuetify Alpha',
+      title: 'Beyond Compassion',
       meta: [
-        { name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify' }
+        { name: 'description', content: 'A pretty cool NPO' }
       ]
     },
 
     data: () => ({
-      items: ['/static/home-parallax.png'],
-      // MIKE: length should be computed based on number of events + length of groups
-      length: 3,
+      pastEvents: [
+        {
+          name: 'annual fundraising event',
+          description: 'A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.',
+          photo: '/static/event-001.jpg'
+        },
+        {
+          name: 'weekly event in new york city',
+          description: 'Allow me to explain this image. The image has some people doing some things.',
+          photo: '/static/event-002.jpg'
+        },
+        {
+          name: 'best event ever 2018',
+          description: 'This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.',
+          photo: '/static/event-003.jpg'
+        }
+      ],
+      pastEventIndex: 0,
       window: 0
     }),
 
     computed: {
       ...mapState(['events', 'loading']),
 
+      pastEvent () {
+        return this.pastEvents[this.pastEventIndex]
+      },
+
+      pastEventPhotos () {
+        return R.map(R.prop('photo'), this.pastEvents)
+      },
+
+      titleClass () {
+        return {
+          'display-1': this.$vuetify.breakpoint.xs,
+          'display-3': this.$vuetify.breakpoint.smAndUp,
+          'font-weight-thin': true
+        }
+      },
+
+      photoCarouselHeight () {
+        if (this.$vuetify.breakpoint.xs) {
+          return 300
+        } else if (this.$vuetify.breakpoint.mdAndDown) {
+          return 400
+        }
+
+        return 500
+      },
+
+      eventGroupLength () {
+        if (this.$vuetify.breakpoint.xs) {
+          return 1
+        } else if (this.$vuetify.breakpoint.mdAndDown) {
+          return 2
+        }
+
+        return 3
+      },
+
+      windowLength () {
+        // MIKE: 5 happens to be the number of results im generating on the
+        // server - this is placeholder so dont use a magic number when u
+        // actually implement the real thing
+        return 5 / Math.ceil(this.eventGroupLength)
+      },
+
       eventGroups () {
-        // MIKE: change the length of based on screen width
-        return R.splitEvery(2, this.events)
+        return R.splitEvery(this.eventGroupLength, this.events)
       },
 
       cardFeatures () {
@@ -223,16 +314,34 @@
     },
 
     methods: {
+      // MIKE: modify the original component in the alpha plugin instead of
+      // using this hack (the new text will change too early and it looks
+      // slightly off)
+      setPastEventIndex (i) {
+        if (i !== undefined) {
+          this.pastEventIndex = i
+        }
+      },
+
       next () {
-        this.window = this.window + 1 === this.length
+        this.window = this.window + 1 === this.windowLength
           ? 0
           : this.window + 1
       },
+
       prev () {
         this.window = this.window - 1 < 0
-          ? this.length - 1
+          ? this.windowLength - 1
           : this.window - 1
       }
     }
   }
 </script>
+
+<style>
+.v-carousel__controls {
+  background-color: transparent !important;
+  bottom: unset !important;
+  top: 10px !important;
+}
+</style>

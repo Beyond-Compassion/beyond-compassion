@@ -66,12 +66,12 @@
       subTitle () {
         return this.$t(`${this.namespace}.jumbotronSubTitle`)
       },
-      // heroImage () {
-      //   return `/static/${this.namespace.toLowerCase()}-hero.png`
-      // }
       heroImage () {
-        return `/static/shoes-003-BW.png`
+        return `/static/${this.namespace.toLowerCase()}-hero.png`
       }
+      // heroImage () {
+      //   return `/static/shoes-003-BW.png`
+      // }
     },
 
     mounted () {

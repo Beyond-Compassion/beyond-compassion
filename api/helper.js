@@ -7,7 +7,6 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   getEvents = require('./axios.js');
 }
-const cur = R.curry;
 
 const randomInt = (min, max) => {
   min = Math.ceil(min);

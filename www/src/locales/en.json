@@ -51,6 +51,10 @@
         "text": "Home"
       },
       {
+        "to": "/gallery",
+        "text": "Gallery"
+      },
+      {
         "to": "/services",
         "text": "Services"
       },
@@ -76,8 +80,8 @@
     "submit": "Submit"
   },
   "Home": {
-    "jumbotronTitle": "Velit Dictumst Elit Nibh Nullam",
-    "jumbotronSubTitle": "Blandit elit vehicula elit vehicula sagittis faucibus vestibulum lobortis",
+    "jumbotronTitle": "Velit Dictumst Elit Nibh",
+    "jumbotronSubTitle": "Blandit elit vehicula elit vehicula sagittis faucibus vestibulum",
     "cardFeatures": [
       {
         "title": "Award-winning architecture",
@@ -114,6 +118,10 @@
       }
     ]
   },
+  "Gallery": {
+    "jumbotronTitle": "Photo Gallery",
+    "jumbotronSubTitle": ""
+  },
   "Projects": {
     "jumbotronTitle": "Building a Culture of Excellence",
     "jumbotronSubTitle": "Relentlessly advancing our clients\" visions, beyond their expectations",
@@ -123,15 +131,15 @@
         "filter": null
       },
       {
-        "text": "Skyscrapers",
+        "text": "Events",
         "filter": 1
       },
       {
-        "text": "Government",
+        "text": "Beneficiaries",
         "filter": 2
       },
       {
-        "text": "Customized",
+        "text": "Members",
         "filter": 3
       }
     ],

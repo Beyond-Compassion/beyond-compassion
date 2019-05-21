@@ -3,6 +3,7 @@
     v-scroll="onScroll"
     app
     dark
+    dense
     :flat="!isScrolling"
     :color="!isScrolling ? 'transparent' : 'secondary'"
   >
