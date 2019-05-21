@@ -11,7 +11,7 @@ breakpoint is hit -->
         align-center
         wrap
       >
-        <!-- testimonial -->
+        <!-- quote -->
         <v-flex
           v-for="(testimonial, i) in testimonials.slice(0,1)"
           :key="i"
@@ -37,78 +37,20 @@ breakpoint is hit -->
           </span>
         </v-flex>
 
-        <!-- card carousel -->
+        <!-- event carousel -->
         <v-flex
           v-if="!loading"
           class="mt-3"
           :style="{ height: '100%' }"
           xs12
         >
-          <!-- card carousel window -->
-          <v-window
-            v-model="window"
-          >
-            <v-window-item
-              v-for="eventGroup in eventGroups"
-              :key="eventGroup[0].name"
-            >
-              <v-layout
-                row
-                wrap
-                justify-center
-              >
-                <!-- text -->
-                <v-flex
-                  v-for="event in eventGroup"
-                  :key="event.name"
-                  xs12
-                  sm6
-                  lg4
-                >
-                  <v-card
-                    class="ma-2 greyDark--text"
-                    color="greyLightest"
-                  >
-                    <v-img
-                      :src="event.thumbnail"
-                    />
-                    <v-card-title>
-                      <span class="headline text-truncate">
-                        {{ event.name }}
-                      </span>
-                    </v-card-title>
-                    <v-card-text>
-                      <span class="greyLight--text">Starts {{ event.start }}</span><br>
-                      <span class="greyLight--text">Ends {{ event.end }}</span><br><br>
-                      <span
-                        v-for="line in event.address"
-                        :key="line"
-                        class="greyLight--text"
-                        v-html="`<span>${line}</span><br>`"
-                      />
-                    </v-card-text>
-                    <v-card-actions>
-                      <v-spacer />
-                      <v-btn
-                        class="primaryLight--text"
-                        flat
-                        :href="event.url"
-                        target="_blank"
-                        :ripple="false"
-                        dark
-                        large
-                      >
-                        more info
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-window-item>
-          </v-window>
+          <event-carousel
+            :window="window"
+            :event-groups="eventGroups"
+          />
         </v-flex>
 
-        <!-- loading spinner -->
+        <!-- events loading spinner -->
         <v-flex
           v-else
           class="mt-5 text-xs-center"
@@ -120,126 +62,40 @@ breakpoint is hit -->
           />
         </v-flex>
 
-        <!-- card carousel controls -->
+        <!-- event carousel controls -->
         <v-flex
           xs12
           class="mt-4 mb-5 pb-5"
         >
-          <v-layout
-            row
-            wrap
-            justify-center
-          >
-            <v-flex
-              xs10
-              sm6
-              lg3
-            >
-              <v-card
-                color="transparent"
-                class="elevation-0"
-              >
-                <v-card-actions>
-                  <!-- back button -->
-                  <v-btn
-                    flat
-                    large
-                    left
-                    color="primaryDark"
-                    @click="prev"
-                  >
-                    <v-icon x-large>
-                      mdi-chevron-left
-                    </v-icon>
-                  </v-btn>
-
-                  <v-spacer />
-
-                  <!-- forward button -->
-                  <v-btn
-                    flat
-                    large
-                    right
-                    color="primaryDark"
-                    @click="next"
-                  >
-                    <v-icon x-large>
-                      mdi-chevron-right
-                    </v-icon>
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-flex>
-          </v-layout>
+          <carousel-controls
+            @prev="prev"
+            @next="next"
+          />
         </v-flex>
 
-        <!-- photo carousel title -->
+        <!-- projects title -->
         <v-flex
           xs12
           class="mt-3 text-xs-center"
         >
           <span :class="titleClass">
-            {{ 'past events' | titleCase }}
+            {{ 'projects' | titleCase }}
           </span>
         </v-flex>
       </v-layout>
     </v-container>
 
-    <alpha-hero
-      gradient="to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1)"
-      :height="$vuetify.breakpoint.mdAndUp ? 800 : 600"
-      :jumbotron="false"
-      :items="pastEventPhotos"
-      :delimiter-icon="$vuetify.icons.delimiter"
-      :hide-controls="true"
-      class="mt-3"
-      dark
-      :cycle="false"
-      @change="setPastEventIndex"
-    >
-      <v-container
-        fill-height
-        :grid-list-xs="$vuetify.breakpoint.smAndDown"
-        :grid-list-xl="$vuetify.breakpoint.mdAndUp"
-      >
-        <v-layout
-          align-end
-          wrap
-        >
-          <v-flex
-            xs12
-            sm6
-            xl5
-          >
-            <v-card
-              color="transparent"
-              class="elevation-0"
-            >
-              <v-card-title class="pb-0">
-                <span class="headline">{{ pastEvent.name | titleCase }}</span>
-              </v-card-title>
-              <v-card-text>
-                <span class="body-1">{{ pastEvent.description }}</span>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  color="accentLight"
-                  flat
-                >
-                  view gallery
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </alpha-hero>
+    <!-- project carousel -->
+    <project-carousel :projects="projects" />
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex'
   import * as R from 'ramda'
+  import CarouselControls from '@/components/CarouselControls'
+  import EventCarousel from '@/components/EventCarousel'
+  import ProjectCarousel from '@/components/ProjectCarousel'
 
   export default {
     metaInfo: {
@@ -249,8 +105,15 @@ breakpoint is hit -->
       ]
     },
 
+    components: {
+      CarouselControls,
+      EventCarousel,
+      ProjectCarousel
+    },
+
+    // MIKE: put the "projects" array into the localization file
     data: () => ({
-      pastEvents: [
+      projects: [
         {
           name: 'annual fundraising event',
           description: 'A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.',
@@ -267,20 +130,11 @@ breakpoint is hit -->
           photo: '/static/event-003.jpg'
         }
       ],
-      pastEventIndex: 0,
       window: 0
     }),
 
     computed: {
       ...mapState(['events', 'loading']),
-
-      pastEvent () {
-        return this.pastEvents[this.pastEventIndex]
-      },
-
-      pastEventPhotos () {
-        return R.map(R.prop('photo'), this.pastEvents)
-      },
 
       titleClass () {
         return {
@@ -288,16 +142,6 @@ breakpoint is hit -->
           'display-3': this.$vuetify.breakpoint.smAndUp,
           'font-weight-thin': true
         }
-      },
-
-      photoCarouselHeight () {
-        if (this.$vuetify.breakpoint.xs) {
-          return 300
-        } else if (this.$vuetify.breakpoint.mdAndDown) {
-          return 400
-        }
-
-        return 500
       },
 
       eventGroupLength () {
@@ -321,25 +165,12 @@ breakpoint is hit -->
         return R.splitEvery(this.eventGroupLength, this.events)
       },
 
-      cardFeatures () {
-        return this.$t('Home.cardFeatures')
-      },
-
       testimonials () {
         return this.$t('Home.testimonials')
       }
     },
 
     methods: {
-      // MIKE: modify the original component in the alpha plugin instead of
-      // using this hack (the new text will change too early and it looks
-      // slightly off)
-      setPastEventIndex (i) {
-        if (i !== undefined) {
-          this.pastEventIndex = i
-        }
-      },
-
       next () {
         this.window = this.window + 1 === this.windowLength
           ? 0
