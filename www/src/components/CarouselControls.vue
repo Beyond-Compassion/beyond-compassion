@@ -19,7 +19,7 @@
             flat
             large
             left
-            color="primaryDark"
+            color="primaryLight"
             @click="(e) => this.$emit('prev', e)"
           >
             <v-icon x-large>
@@ -34,7 +34,7 @@
             flat
             large
             right
-            color="primaryDark"
+            color="primaryLight"
             @click="(e) => this.$emit('next', e)"
           >
             <v-icon x-large>

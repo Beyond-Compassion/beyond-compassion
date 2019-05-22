@@ -11,7 +11,7 @@ breakpoint is hit -->
         align-center
         wrap
       >
-<!-- quote -->
+        <!-- quote -->
         <v-flex
           v-for="(testimonial, i) in testimonials.slice(0,1)"
           :key="i"
@@ -27,10 +27,88 @@ breakpoint is hit -->
           />
         </v-flex>
 
-        <!-- events title -->
+        <!-- mission title -->
         <v-flex
           xs12
           class="mt-3 mb-4 text-xs-center"
+        >
+          <span :class="titleClass">
+            {{ 'Our Mission' | titleCase }}
+          </span>
+        </v-flex>
+
+        <!-- mission body -->
+        <v-flex
+          xs12
+          class="mt-2 mb-5"
+        >
+          <v-layout
+            row
+            wrap
+            justify-space-around
+            fill-height
+          >
+            <!-- mission item -->
+            <v-flex
+              v-for="item in missionItems"
+              :key="item.title"
+              xs12
+              md4
+            >
+              <v-layout
+                row
+                wrap
+                class="text-xs-center"
+              >
+                <!-- image -->
+                <v-flex xs12>
+                  <v-layout
+                    row
+                    wrap
+                    align-center
+                    justify-space-around
+                  >
+                    <v-flex
+                      md5
+                      sm3
+                      xs5
+                    >
+                      <v-img :src="item.src" />
+                    </v-flex>
+                  </v-layout>
+                </v-flex>
+
+                <!-- text -->
+                <v-flex xs12>
+                  <v-layout
+                    row
+                    wrap
+                    align-center
+                    justify-space-around
+                  >
+                    <v-flex
+                      xs12
+                      sm6
+                      md10
+                    >
+                      <p class="headline">
+                        {{ item.title | titleCase }}
+                      </p>
+                      <p class="body-1">
+                        {{ item.body }}
+                      </p>
+                    </v-flex>
+                  </v-layout>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+
+        <!-- events title -->
+        <v-flex
+          xs12
+          class="mt-5 mb-4 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'upcoming events' | titleCase }}
@@ -118,6 +196,23 @@ breakpoint is hit -->
 
     // MIKE: put the "projects" array into the localization file
     data: () => ({
+      missionItems: [
+        {
+          src: '/static/heart-sketch.svg',
+          title: 'helping those in need',
+          body: 'Lorem ipsum maecenas ullamcorper vivamus tortor, lorem egestas vestibulum eget volutpat inceptos, varius ultrices justo lacus.'
+        },
+        {
+          src: '/static/earth-sketch.svg',
+          title: 'giving globally',
+          body: 'Duis imperdiet fusce aliquet adipiscing aliquet sed risus orci, fames tincidunt consequat nunc sit vulputate metus.'
+        },
+        {
+          src: '/static/handshake-sketch.svg',
+          title: 'working hands-on',
+          body: 'Hendrerit sit consectetur porttitor turpis libero, curae phasellus cubilia blandit commodo risus, justo turpis litora in.'
+        }
+      ],
       projects: [
         {
           name: 'annual fundraising event',
