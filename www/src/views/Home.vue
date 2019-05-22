@@ -18,7 +18,7 @@ breakpoint is hit -->
           xs12
           sm8
           md6
-          class="my-5 pb-5"
+          :class="{'mb-5': true, 'pb-5': true, 'mr-4': $vuetify.breakpoint.xs}"
         >
           <alpha-testimonial
             :author="testimonial.author"
@@ -30,7 +30,7 @@ breakpoint is hit -->
         <!-- mission title -->
         <v-flex
           xs12
-          class="mt-3 mb-4 text-xs-center"
+          class="mt-3 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'Our Mission' | titleCase }}
@@ -53,7 +53,8 @@ breakpoint is hit -->
               v-for="item in missionItems"
               :key="item.title"
               xs12
-              md4
+              lg4
+              class="mt-3 mb-1"
             >
               <v-layout
                 row
@@ -69,9 +70,9 @@ breakpoint is hit -->
                     justify-space-around
                   >
                     <v-flex
-                      md5
-                      sm3
-                      xs5
+                      sm2
+                      md3
+                      xs4
                     >
                       <v-img :src="item.src" />
                     </v-flex>
@@ -87,14 +88,14 @@ breakpoint is hit -->
                     justify-space-around
                   >
                     <v-flex
-                      xs12
+                      xs10
+                      md7
                       sm6
-                      md10
                     >
                       <p class="headline">
                         {{ item.title | titleCase }}
                       </p>
-                      <p class="body-1">
+                      <p>
                         {{ item.body }}
                       </p>
                     </v-flex>
@@ -105,10 +106,34 @@ breakpoint is hit -->
           </v-layout>
         </v-flex>
 
+        <!-- projects title -->
+        <v-flex
+          xs12
+          class="mt-3 text-xs-center"
+        >
+          <span :class="titleClass">
+            {{ 'projects' | titleCase }}
+          </span>
+        </v-flex>
+      </v-layout>
+    </v-container>
+
+    <!-- project carousel -->
+    <project-carousel :projects="projects" />
+
+    <v-container
+      fill-height
+      class="greyDark--text"
+    >
+      <v-layout
+        justify-center
+        align-center
+        wrap
+      >
         <!-- events title -->
         <v-flex
           xs12
-          class="mt-5 mb-4 text-xs-center"
+          class="mt-5 mb-2 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'upcoming events' | titleCase }}
@@ -148,28 +173,15 @@ breakpoint is hit -->
           <v-btn
             depressed
             large
-            color="accentLighter"
+            color="accentLightest"
             class="greyDark--text cta"
             :ripple="{ class: 'primaryLight--text' }"
           >
             view calendar
           </v-btn>
         </v-flex>
-
-        <!-- projects title -->
-        <v-flex
-          xs12
-          class="mt-3 text-xs-center"
-        >
-          <span :class="titleClass">
-            {{ 'projects' | titleCase }}
-          </span>
-        </v-flex>
       </v-layout>
     </v-container>
-
-    <!-- project carousel -->
-    <project-carousel :projects="projects" />
   </div>
 </template>
 
@@ -281,6 +293,8 @@ breakpoint is hit -->
 
 .alpha-testimonial__footer-bar {
   height: 2px !important;
+  /* background-color: #829AB1 !important;
+  border-color: #829AB1 !important; */
 }
 
 .v-navigation-drawer .v-list__tile:not(.v-list__tile--active) {
@@ -289,5 +303,13 @@ breakpoint is hit -->
 
 .v-btn--active.cta:before, .v-btn.cta:hover:before, .v-btn.cta:focus:before {
   background-color: #B44D12
+}
+
+p {
+  line-height: 2;
+}
+
+.alpha-testimonial__content .mdi-format-quote-open:before {
+  color: #829AB1;
 }
 </style>

@@ -6,6 +6,8 @@ import 'vuetify/src/stylus/app.styl'
 // NOTE: pallete 2 has a yellow secondary and blue primary
 // NOTE: pallete 13 is reversed of 2
 
+// MIKE: save these colors somewhere else and import them here - that way u can
+// refer to them in different places
 Vue.use(Vuetify, {
   theme: {
     // primary: '#F7C948',

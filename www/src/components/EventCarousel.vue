@@ -35,6 +35,7 @@
             >
               <v-img
                 :src="event.thumbnail"
+                class="inkwell"
               />
               <v-card-title>
                 <span class="headline text-truncate">
