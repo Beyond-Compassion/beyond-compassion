@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client-dev": "cd www && npm run dev",
     "repeater-dev": "cd api && npm run dev",
-    "all-dev": "concurrently \"npm run client-dev\" \"npm run repeater-dev\""
+    "all-dev": "concurrently \"npm run client-dev\" \"npm run repeater-dev\"",
+    "process-images": "cd image-processor && npm run start"
   },
   "author": "",
   "license": "ISC",

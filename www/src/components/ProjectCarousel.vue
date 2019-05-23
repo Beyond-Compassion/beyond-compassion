@@ -1,6 +1,6 @@
 <template>
   <alpha-hero
-    gradient="to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1)"
+    gradient="to top, rgba(19, 66, 101, .9) 20%, rgba(19, 66, 101, .55) 70%"
     :height="$vuetify.breakpoint.mdAndUp ? 800 : 600"
     :jumbotron="false"
     :items="projectPhotos"
@@ -30,14 +30,14 @@
             class="elevation-0"
           >
             <v-card-title class="pb-0">
-              <span class="headline">{{ project.name | titleCase }}</span>
+              <span class="headline greyLightest--text">{{ project.name | titleCase }}</span>
             </v-card-title>
             <v-card-text>
-              <span class="body-1">{{ project.description }}</span>
+              <span class="body-1 greyLightest--text">{{ project.description }}</span>
             </v-card-text>
             <v-card-actions>
               <v-btn
-                color="accentLighter"
+                color="accentLightest"
                 class="greyDark--text cta"
                 :ripple="{ class: 'primaryLight--text' }"
                 depressed

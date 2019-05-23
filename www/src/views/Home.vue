@@ -18,7 +18,7 @@ breakpoint is hit -->
           xs12
           sm8
           md6
-          :class="{'mb-5': true, 'pb-5': true, 'mr-4': $vuetify.breakpoint.xs}"
+          :class="{'mb-5': true, 'pb-4': true, 'mr-4': $vuetify.breakpoint.xs}"
         >
           <alpha-testimonial
             :author="testimonial.author"
@@ -26,11 +26,24 @@ breakpoint is hit -->
             :quote="testimonial.quote"
           />
         </v-flex>
+      </v-layout>
+    </v-container>
 
+    <jumbotron-two />
+
+    <v-container
+      fill-height
+      class="greyDark--text"
+    >
+      <v-layout
+        justify-center
+        align-center
+        wrap
+      >
         <!-- mission title -->
         <v-flex
           xs12
-          class="mt-3 text-xs-center"
+          class="mt-5 pt-5 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'Our Mission' | titleCase }}
@@ -109,7 +122,7 @@ breakpoint is hit -->
         <!-- projects title -->
         <v-flex
           xs12
-          class="mt-3 text-xs-center"
+          class="mt-3 pt-4 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'projects' | titleCase }}
@@ -133,7 +146,7 @@ breakpoint is hit -->
         <!-- events title -->
         <v-flex
           xs12
-          class="mt-5 mb-2 text-xs-center"
+          class="mt-5 pt-5 mb-2 text-xs-center"
         >
           <span :class="titleClass">
             {{ 'upcoming events' | titleCase }}
@@ -177,7 +190,7 @@ breakpoint is hit -->
             class="greyDark--text cta"
             :ripple="{ class: 'primaryLight--text' }"
           >
-            view calendar
+            view past events
           </v-btn>
         </v-flex>
       </v-layout>
@@ -188,9 +201,9 @@ breakpoint is hit -->
 <script>
   import { mapState } from 'vuex'
   import * as R from 'ramda'
-  import CarouselControls from '@/components/CarouselControls'
   import EventCarousel from '@/components/EventCarousel'
   import ProjectCarousel from '@/components/ProjectCarousel'
+  import JumbotronTwo from '@/components/core/Jumbotron2'
 
   export default {
     metaInfo: {
@@ -201,9 +214,9 @@ breakpoint is hit -->
     },
 
     components: {
-      CarouselControls,
       EventCarousel,
-      ProjectCarousel
+      ProjectCarousel,
+      JumbotronTwo
     },
 
     // MIKE: put the "projects" array into the localization file

@@ -4,11 +4,12 @@
 const Jimp = require('jimp');
 const fsp = require('fs').promises;
 
-const blackAndWhite = (sourceBase, targetBase) => source => {
+const processImage = (sourceBase, targetBase) => source => {
   return Jimp
   .read(sourceBase + source)
   .then(img => {
     return img
+      .resize(Jimp.AUTO, 700)
       .greyscale()
       .write(targetBase + source);
   })
@@ -17,8 +18,8 @@ const blackAndWhite = (sourceBase, targetBase) => source => {
   });
 }
 
-const blackAndWhiteBatch = (sourceBase, targetBase) => sources => {
-  const promises = sources.map(blackAndWhite(sourceBase, targetBase));
+const processImageBatch = (sourceBase, targetBase) => sources => {
+  const promises = sources.map(processImage(sourceBase, targetBase));
 
   Promise.all(promises).then(() => console.log('success!'))
 } 
@@ -26,5 +27,5 @@ const blackAndWhiteBatch = (sourceBase, targetBase) => sources => {
 fsp
 .readdir('sources')
 .then(
-  blackAndWhiteBatch('sources/', '../www/public/static/')
+  processImageBatch('sources/', '../www/public/static/')
 );
