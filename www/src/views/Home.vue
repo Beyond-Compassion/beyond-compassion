@@ -190,6 +190,7 @@ breakpoint is hit -->
             color="accentLightest"
             class="greyDark--text cta"
             :ripple="{ class: 'primaryLight--text' }"
+            to="/gallery"
           >
             view past events
           </v-btn>
