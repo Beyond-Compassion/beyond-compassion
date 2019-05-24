@@ -1,3 +1,6 @@
+// MIKE: add a check to see if the hash of the source is = to any existing files
+// and skip them so
+
 // NOTE: To generate a perceptual hash of a Jimp image, based on the pHash algorithm:
 // image.hash(); // aHgG4GgoFjA
 

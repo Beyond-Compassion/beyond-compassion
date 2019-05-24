@@ -3,7 +3,7 @@ const R = require('ramda');
 const { Transform } = require ('./lenses.js');
 var getEvents;
 if (process.env.NODE_ENV === 'development') {
-  getEvents = require('./test/eventbrite.js');
+  getEvents = require('./dummy/eventbrite.js');
 } else {
   getEvents = require('./axios.js');
 }

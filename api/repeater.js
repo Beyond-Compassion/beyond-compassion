@@ -1,7 +1,7 @@
 const { randomSliceRange, selectEvents } = require('./helper.js');
 var getEvents;
 if (process.env.NODE_ENV === 'development') {
-  getEvents = require('./test/eventbrite.js');
+  getEvents = require('./dummy/eventbrite');
 } else {
   getEvents = require('./axios.js');
 }
