@@ -14,5 +14,5 @@
     {"src": "/fonts/(.*)", "dest": "/www/fonts/$1"},
     {"src": ".*", "dest": "/www/index.html"}
   ],
-  "alias": "beyond-compassion"
+  "alias": "bcintl.org"
 }
