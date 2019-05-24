@@ -44,7 +44,7 @@
       <!-- donate button -->
       <v-btn
         depressed
-        color="accentLighter cta"
+        color="accentLightest cta"
         class="greyDark--text"
         :ripple="{ class: 'primaryLight--text' }"
       >

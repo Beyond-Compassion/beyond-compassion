@@ -19,12 +19,15 @@ Vue.use(Vuetify, {
     primary: '#2680C2',
 
     // MIKE: replace above with:
+    primaryLightest: '#62B0E8',
+    primaryLighter: '#4098D7',
     primaryLight: '#2680C2',
     primaryDark: '#186FAF', // #186FAF = rgba(24, 111, 175, 1)
 
     secondary: '#243B53', // NOTE: used as a grey right now - rename to grey and replace with new greys
 
     greyDark: '#243B53',
+    greyLessDark: '#9FB3C8',
     greyLight: '#829AB1',
     greyLightest: '#F0F4F8',
 

@@ -23,7 +23,7 @@
         <v-flex
           xs12
           sm6
-          xl5
+          xl4
         >
           <v-card
             color="transparent"
@@ -32,18 +32,45 @@
             <v-card-title class="pb-0">
               <span class="headline greyLightest--text">{{ project.name | titleCase }}</span>
             </v-card-title>
-            <v-card-text>
-              <span class="body-1 greyLightest--text">{{ project.description }}</span>
+            <v-card-text class="pb-1 pt-2">
+              <p class="body-1 greyLightest--text">
+                {{ project.description }}
+              </p>
+              <span class="title accentLightest--text">$3,000 </span>
+              <span class="body-1 greyLessDark--text">of $10,000</span>
+              <v-progress-linear
+                background-color="greyLight"
+                color="accentLightest"
+                value="30"
+              />
             </v-card-text>
             <v-card-actions>
-              <v-btn
-                color="accentLightest"
-                class="greyDark--text cta"
-                :ripple="{ class: 'primaryLight--text' }"
+              <!-- <v-btn
+                flat
+                large
+                color="primaryLightest"
                 depressed
               >
                 learn more
+              </v-btn> -->
+              <v-spacer />
+              <v-btn
+                flat
+                large
+                color="accentLightest"
+                depressed
+              >
+                donate now
               </v-btn>
+              <v-spacer />
+              <!-- <v-btn
+                color="accentLightest"
+                class="greyDark--text mr-2 cta"
+                :ripple="{ class: 'primaryLight--text' }"
+                depressed
+              >
+                donate now
+              </v-btn> -->
             </v-card-actions>
           </v-card>
         </v-flex>

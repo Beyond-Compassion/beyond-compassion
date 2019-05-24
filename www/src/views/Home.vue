@@ -83,9 +83,10 @@ breakpoint is hit -->
                     justify-space-around
                   >
                     <v-flex
+                      xs4
                       sm2
                       md3
-                      xs4
+                      lg4
                     >
                       <v-img :src="item.src" />
                     </v-flex>
@@ -242,16 +243,19 @@ breakpoint is hit -->
         {
           name: 'annual fundraising event',
           description: 'A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.',
+          // description: 'A description of what is happening the picture.',
           photo: '/static/event-001.jpg'
         },
         {
           name: 'weekly event in new york city',
           description: 'Allow me to explain this image. The image has some people doing some things.',
+          // description: 'Allow me to explain this image. The image has some people.',
           photo: '/static/event-002.jpg'
         },
         {
           name: 'best event ever 2018',
           description: 'This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.',
+          // description: 'This image is very complex, but i can tell you about it.',
           photo: '/static/event-003.jpg'
         }
       ],
