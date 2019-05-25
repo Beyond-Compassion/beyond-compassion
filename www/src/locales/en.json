@@ -52,7 +52,7 @@
       },
       {
         "to": "/gallery",
-        "text": "Gallery"
+        "text": "Archive"
       }
     ]
   },
@@ -107,8 +107,8 @@
     ]
   },
   "Gallery": {
-    "jumbotronTitle": "Photo Gallery",
-    "jumbotronSubTitle": ""
+    "jumbotronTitle": "Event Archive",
+    "jumbotronSubTitle": "To all our guests: thank you for coming!"
   },
   "Projects": {
     "jumbotronTitle": "Building a Culture of Excellence",
@@ -119,15 +119,15 @@
         "filter": null
       },
       {
-        "text": "Events",
+        "text": "Event 1",
         "filter": 1
       },
       {
-        "text": "Beneficiaries",
+        "text": "Event 2",
         "filter": 2
       },
       {
-        "text": "Members",
+        "text": "Event 3",
         "filter": 3
       }
     ],

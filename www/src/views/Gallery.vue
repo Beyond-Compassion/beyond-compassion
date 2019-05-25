@@ -5,7 +5,7 @@
       align-center
     >
       <v-flex
-        xs8
+        xs12
         class="mb-5"
       >
         <alpha-gallery
