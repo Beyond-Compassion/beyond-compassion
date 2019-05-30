@@ -51,74 +51,7 @@ breakpoint is hit -->
         </v-flex>
 
         <!-- mission body -->
-        <v-flex
-          xs12
-          class="mt-2 mb-5"
-        >
-          <v-layout
-            row
-            wrap
-            justify-space-around
-            fill-height
-          >
-            <!-- mission item -->
-            <v-flex
-              v-for="item in missionItems"
-              :key="item.title"
-              xs12
-              lg4
-              class="mt-3 mb-1"
-            >
-              <v-layout
-                row
-                wrap
-                class="text-xs-center"
-              >
-                <!-- image -->
-                <v-flex xs12>
-                  <v-layout
-                    row
-                    wrap
-                    align-center
-                    justify-space-around
-                  >
-                    <v-flex
-                      xs4
-                      sm2
-                      md3
-                      lg4
-                    >
-                      <v-img :src="item.src" />
-                    </v-flex>
-                  </v-layout>
-                </v-flex>
-
-                <!-- text -->
-                <v-flex xs12>
-                  <v-layout
-                    row
-                    wrap
-                    align-center
-                    justify-space-around
-                  >
-                    <v-flex
-                      xs10
-                      md7
-                      sm6
-                    >
-                      <p class="headline">
-                        {{ item.title | titleCase }}
-                      </p>
-                      <p>
-                        {{ item.body }}
-                      </p>
-                    </v-flex>
-                  </v-layout>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-          </v-layout>
-        </v-flex>
+        <mission-section :items="missionItems" />
 
         <!-- projects title -->
         <v-flex
@@ -205,6 +138,7 @@ breakpoint is hit -->
   import * as R from 'ramda'
   import EventCarousel from '@/components/EventCarousel'
   import ProjectCarousel from '@/components/ProjectCarousel'
+  import MissionSection from '@/components/MissionSection'
   import JumbotronTwo from '@/components/core/Jumbotron2'
 
   export default {
@@ -218,48 +152,32 @@ breakpoint is hit -->
     components: {
       EventCarousel,
       ProjectCarousel,
-      JumbotronTwo
+      JumbotronTwo,
+      MissionSection
     },
 
     // MIKE: put the "projects" array into the localization file
     data: () => ({
-      missionItems: [
-        {
-          src: '/static/heart-sketch.svg',
-          title: 'helping those in need',
-          body: 'Lorem ipsum maecenas ullamcorper vivamus tortor, lorem egestas vestibulum eget volutpat inceptos, varius ultrices justo lacus.'
-        },
-        {
-          src: '/static/earth-sketch.svg',
-          title: 'giving globally',
-          body: 'Duis imperdiet fusce aliquet adipiscing aliquet sed risus orci, fames tincidunt consequat nunc sit vulputate metus.'
-        },
-        {
-          src: '/static/handshake-sketch.svg',
-          title: 'working hands-on',
-          body: 'Hendrerit sit consectetur porttitor turpis libero, curae phasellus cubilia blandit commodo risus, justo turpis litora in.'
-        }
-      ],
-      projects: [
-        {
-          name: 'some charity project',
-          description: 'A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.',
-          // description: 'A description of what is happening the picture.',
-          photo: '/static/event-001.jpg'
-        },
-        {
-          name: 'weekly fundraiser in new york city',
-          description: 'Allow me to explain this image. The image has some people doing some things.',
-          // description: 'Allow me to explain this image. The image has some people.',
-          photo: '/static/event-002.jpg'
-        },
-        {
-          name: 'a different charity project',
-          description: 'This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.',
-          // description: 'This image is very complex, but i can tell you about it.',
-          photo: '/static/event-003.jpg'
-        }
-      ],
+      // projects: [
+      //   {
+      //     name: 'some charity project',
+      //     description: 'A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.',
+      //     // description: 'A description of what is happening the picture.',
+      //     photo: '/static/event-001.jpg'
+      //   },
+      //   {
+      //     name: 'weekly fundraiser in new york city',
+      //     description: 'Allow me to explain this image. The image has some people doing some things.',
+      //     // description: 'Allow me to explain this image. The image has some people.',
+      //     photo: '/static/event-002.jpg'
+      //   },
+      //   {
+      //     name: 'a different charity project',
+      //     description: 'This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.',
+      //     // description: 'This image is very complex, but i can tell you about it.',
+      //     photo: '/static/event-003.jpg'
+      //   }
+      // ],
       window: 0
     }),
 
@@ -297,6 +215,14 @@ breakpoint is hit -->
 
       testimonials () {
         return this.$t('Home.testimonials')
+      },
+
+      missionItems () {
+        return this.$t('Home.mission.items')
+      },
+
+      projects () {
+        return this.$t('Home.projects.items')
       }
     }
   }
