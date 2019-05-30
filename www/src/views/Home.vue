@@ -51,74 +51,7 @@ breakpoint is hit -->
         </v-flex>
 
         <!-- mission body -->
-        <v-flex
-          xs12
-          class="mt-2 mb-5"
-        >
-          <v-layout
-            row
-            wrap
-            justify-space-around
-            fill-height
-          >
-            <!-- mission item -->
-            <v-flex
-              v-for="item in missionItems"
-              :key="item.title"
-              xs12
-              lg4
-              class="mt-3 mb-1"
-            >
-              <v-layout
-                row
-                wrap
-                class="text-xs-center"
-              >
-                <!-- image -->
-                <v-flex xs12>
-                  <v-layout
-                    row
-                    wrap
-                    align-center
-                    justify-space-around
-                  >
-                    <v-flex
-                      xs4
-                      sm2
-                      md3
-                      lg4
-                    >
-                      <v-img :src="item.src" />
-                    </v-flex>
-                  </v-layout>
-                </v-flex>
-
-                <!-- text -->
-                <v-flex xs12>
-                  <v-layout
-                    row
-                    wrap
-                    align-center
-                    justify-space-around
-                  >
-                    <v-flex
-                      xs10
-                      md7
-                      sm6
-                    >
-                      <p class="headline">
-                        {{ item.title | titleCase }}
-                      </p>
-                      <p>
-                        {{ item.body }}
-                      </p>
-                    </v-flex>
-                  </v-layout>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-          </v-layout>
-        </v-flex>
+        <mission-section :items="missionItems" />
 
         <!-- projects title -->
         <v-flex
@@ -205,6 +138,7 @@ breakpoint is hit -->
   import * as R from 'ramda'
   import EventCarousel from '@/components/EventCarousel'
   import ProjectCarousel from '@/components/ProjectCarousel'
+  import MissionSection from '@/components/MissionSection'
   import JumbotronTwo from '@/components/core/Jumbotron2'
 
   export default {
@@ -218,7 +152,8 @@ breakpoint is hit -->
     components: {
       EventCarousel,
       ProjectCarousel,
-      JumbotronTwo
+      JumbotronTwo,
+      MissionSection
     },
 
     // MIKE: put the "projects" array into the localization file

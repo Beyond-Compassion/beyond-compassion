@@ -3,7 +3,14 @@
     <v-layout
       justify-center
       align-center
+      wrap
     >
+      <v-flex
+        xs12
+        class="text-xs-center"
+      >
+        <core-dialog :items="projects" />
+      </v-flex>
       <v-flex
         xs8
         class="mb-5"
@@ -18,13 +25,26 @@
 </template>
 
 <script>
+  import CoreDialog from '@/components/core/Dialog.vue'
+
   export default {
     metaInfo: {
-      title: 'Projects',
+      title: 'Gallery',
       meta: [
         { name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify' }
       ]
     },
+
+    components: {
+      CoreDialog
+    },
+
+    data () {
+      return {
+        dialog: false
+      }
+    },
+
     computed: {
       categories () {
         return this.$t('Projects.categories')
