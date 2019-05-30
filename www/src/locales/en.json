@@ -104,8 +104,46 @@
         "title": "General Manager, Springfield Tower",
         "quote": "The complexities and challenges AlphaConstruction successfully overcame on our behalf includes substantial permit obstacles, coordination and selection support of all design and finish materials, and the diffculty of integrating existing and new structures."
       }
-    ]
-  },
+    ],
+    "mission": {
+      "items": [
+        {
+          "src": "/static/heart-sketch.svg",
+          "title": "helping those in need",
+          "body": "Lorem ipsum maecenas ullamcorper vivamus tortor, lorem egestas vestibulum eget volutpat inceptos, varius ultrices justo lacus."
+        },
+        {
+          "src": "/static/earth-sketch.svg",
+          "title": "giving globally",
+          "body": "Duis imperdiet fusce aliquet adipiscing aliquet sed risus orci, fames tincidunt consequat nunc sit vulputate metus."
+        },
+        {
+          "src": "/static/handshake-sketch.svg",
+          "title": "working hands-on",
+          "body": "Hendrerit sit consectetur porttitor turpis libero, curae phasellus cubilia blandit commodo risus, justo turpis litora in."
+        }
+      ]
+    },
+    "projects": {
+      "items": [
+        {
+          "name": "some charity project",
+          "description": "A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.",
+          "photo": "/static/event-001.jpg"
+        },
+        {
+          "name": "weekly fundraiser in new york city",
+          "description": "Allow me to explain this image. The image has some people doing some things.",
+          "photo": "/static/event-002.jpg"
+        },
+        {
+          "name": "a different charity project",
+          "description": "This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.",
+          "photo": "/static/event-003.jpg"
+        }
+      ]
+  }
+},
   "Gallery": {
     "jumbotronTitle": "Photo Gallery",
     "jumbotronSubTitle": ""
