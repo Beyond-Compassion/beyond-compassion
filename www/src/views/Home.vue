@@ -223,6 +223,10 @@ breakpoint is hit -->
 
       projects () {
         return this.$t('Home.projects.items')
+      },
+
+      donate () {
+        return this.$t('Home.donate')
       }
     }
   }

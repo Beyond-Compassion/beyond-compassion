@@ -69,7 +69,7 @@
   },
   "Home": {
     "jumbotronTitle": "Velit Dictumst Elit Nibh",
-    "jumbotronSubTitle": "Blandit elit vehicula elit vehicula sagittis faucibus vestibulum",
+    "jumbotronSubTitle": "Share your compassion with the world",
     "cardFeatures": [
       {
         "title": "Award-winning architecture",
@@ -90,9 +90,9 @@
     "testimonialsTitle": "Testimonials",
     "testimonials": [
       {
-        "author": "John Doe",
-        "title": "President, Beyond Compassion",
-        "quote": "Sollicitudin ad laoreet turpis taciti massa dictumst posuere justo, porttitor aliquam proin pulvinar proin dui metus et, rutrum metus lectus facilisis ut vestibulum accumsan per sagittis vehicula cubilia elit sollicitudin eros nunc aliquam."
+        "author": "Coretta Scott King",
+        "title": "",
+        "quote": "The greatness of a community is most accurately measured by the compassionate actions of its members."
       },
       {
         "author": "Jason Schraiber",
@@ -105,22 +105,23 @@
         "quote": "The complexities and challenges AlphaConstruction successfully overcame on our behalf includes substantial permit obstacles, coordination and selection support of all design and finish materials, and the diffculty of integrating existing and new structures."
       }
     ],
+    "donate": "Share your compassion with the world",
     "mission": {
       "items": [
         {
           "src": "/static/heart-sketch.svg",
           "title": "helping those in need",
-          "body": "Lorem ipsum maecenas ullamcorper vivamus tortor, lorem egestas vestibulum eget volutpat inceptos, varius ultrices justo lacus."
+          "body": " We aim to help the underprivileged financially to provide for their food, clothing, shelter, education in a compassionate manner."
         },
         {
           "src": "/static/earth-sketch.svg",
           "title": "giving globally",
-          "body": "Duis imperdiet fusce aliquet adipiscing aliquet sed risus orci, fames tincidunt consequat nunc sit vulputate metus."
+          "body": " Not only do we provide aid to domestic communities, we also give globally to international communities"
         },
         {
           "src": "/static/handshake-sketch.svg",
           "title": "working hands-on",
-          "body": "Hendrerit sit consectetur porttitor turpis libero, curae phasellus cubilia blandit commodo risus, justo turpis litora in."
+          "body": " To help tighten the bonds within a community, the majority of our projects requires our involvement in the community. In order to help them compassionately, the best way is to understand and respect their way and come up with resolution accordingly."
         }
       ]
     },
