@@ -25,12 +25,12 @@
               >
                 <h1
                   :class="titleClass"
-                  v-html="title"
+                  v-html="$options.filters.titleCase(title)"
                 />
                 <div
                   v-if="subTitle"
                   class="body greyLightest--text"
-                  v-html="subTitle"
+                  v-html="$options.filters.titleCase(subTitle)"
                 />
               </v-flex>
             </v-fade-transition>

@@ -25,7 +25,7 @@
                 <div
                   v-if="subTitle"
                   class="body-1 greyLightest--text"
-                  v-html="subTitle"
+                  v-html="$options.filters.titleCase(subTitle)"
                 />
                 <v-btn
                   depressed

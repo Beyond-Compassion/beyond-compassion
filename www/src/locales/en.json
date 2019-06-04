@@ -68,8 +68,8 @@
     "submit": "Submit"
   },
   "Home": {
-    "jumbotronTitle": "Velit Dictumst Elit Nibh",
-    "jumbotronSubTitle": "Share your compassion with the world",
+    "jumbotronTitle": "Help your neighbor",
+    "jumbotronSubTitle": "Build your community",
     "cardFeatures": [
       {
         "title": "Award-winning architecture",
@@ -110,18 +110,18 @@
       "items": [
         {
           "src": "/static/heart-sketch.svg",
-          "title": "helping those in need",
-          "body": " We aim to help the underprivileged financially to provide for their food, clothing, shelter, education in a compassionate manner."
+          "title": "help beyond compassion",
+          "body": "We aim to help the underprivileged financially to provide for their food, clothing, shelter, education in a compassionate manner."
         },
         {
           "src": "/static/earth-sketch.svg",
-          "title": "giving globally",
-          "body": " Not only do we provide aid to domestic communities, we also give globally to international communities"
+          "title": "give without border",
+          "body": "Not only do we provide aid to domestic communities, we also give globally to international communities"
         },
         {
           "src": "/static/handshake-sketch.svg",
-          "title": "working hands-on",
-          "body": " To help tighten the bonds within a community, the majority of our projects requires our involvement in the community. In order to help them compassionately, the best way is to understand and respect their way and come up with resolution accordingly."
+          "title": "grow with communities",
+          "body": "To help tighten the bonds within a community, the majority of our projects requires our involvement in the community. In order to help them compassionately, the best way is to understand and respect their way and come up with resolution accordingly."
         }
       ]
     },

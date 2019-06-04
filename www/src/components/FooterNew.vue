@@ -17,7 +17,6 @@
           class="mx-3 white--text"
           icon
         >
-          <!-- <v-icon size="24px">{{ icon }}</v-icon> -->
           <v-icon medium>
             {{ icon }}
           </v-icon>
@@ -25,7 +24,16 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Check us out on social media!
+        Check us out on social media or send us an email
+        <router-link
+          tag="span"
+          to="/"
+        >
+          <a
+            class="white--text"
+          >here</a>
+        </router-link>
+        to get in touch
       </v-card-text>
 
       <v-divider />

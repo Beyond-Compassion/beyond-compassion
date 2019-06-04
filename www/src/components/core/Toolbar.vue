@@ -6,27 +6,23 @@
     :flat="!isScrolling"
     :color="!isScrolling ? 'transparent' : 'greyLightest'"
   >
-    <!-- <img
-      src="/static/logo-small.svg"
-      width="40"
-    > -->
-
     <v-toolbar-title>
       <router-link
         class="title primaryLight--text"
         tag="span"
         to="/"
       >
-        <a :style="{ textDecoration: 'none' }">Beyond Compassion</a>
+        <a :style="{ textDecoration: 'none' }">Beyond Compassion <img
+          src="/static/logo-sun.svg"
+          width="40"
+        ></a>
       </router-link>
       <span class="title primaryLight--text" />
     </v-toolbar-title>
- 
+
     <v-spacer />
 
-    <v-toolbar-items
-      v-if="$vuetify.breakpoint.mdAndUp"
-    >
+    <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
       <!-- navigation buttons -->
       <v-btn
         v-for="(item, i) in items"
@@ -36,9 +32,7 @@
         :to="item.to"
         flat
       >
-        <span
-          v-text="item.text"
-        />
+        <span v-text="item.text" />
       </v-btn>
 
       <!-- donate button -->
@@ -64,7 +58,7 @@
 </template>
 
 <script>
-  // Utilities
+// Utilities
   import { mapMutations } from 'vuex'
 
   export default {
@@ -81,8 +75,8 @@
     methods: {
       ...mapMutations(['toggleDrawer']),
       onScroll () {
-        this.isScrolling = (window.pageYOffset ||
-          document.documentElement.scrollTop || 0) > 100
+        this.isScrolling =
+          (window.pageYOffset || document.documentElement.scrollTop || 0) > 100
       }
     }
   }
@@ -90,6 +84,6 @@
 
 <style scoped>
 .button-class {
-  color: #243B53;
+  color: #243b53;
 }
 </style>
