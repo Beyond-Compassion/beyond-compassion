@@ -12,10 +12,13 @@
         tag="span"
         to="/"
       >
-        <a :style="{ textDecoration: 'none' }">Beyond Compassion <img
-          src="/static/logo-sun.svg"
-          width="40"
-        ></a>
+        <a :style="{ textDecoration: 'none' }">
+          Beyond Compassion
+          <img
+            src="/static/logo-sun.svg"
+            width="40"
+          >
+        </a>
       </router-link>
       <span class="title primaryLight--text" />
     </v-toolbar-title>
@@ -29,7 +32,7 @@
         :key="i"
         class="button-class"
         active-class="primaryLight--text"
-        :to="item.to"
+        :to="{ path: item.to, ...(item.hash ? { hash: item.hash } : {}) }"
         flat
       >
         <span v-text="item.text" />
@@ -41,8 +44,9 @@
         color="accentLightest cta"
         class="greyDark--text"
         :ripple="{ class: 'primaryLight--text' }"
+        :to="{ path: '/', hash: 'donate-section' }"
       >
-        donate
+        <span>donate</span>
       </v-btn>
     </v-toolbar-items>
     <v-btn

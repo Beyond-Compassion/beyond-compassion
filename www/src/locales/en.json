@@ -23,7 +23,6 @@
         "text": "Commitment to the Community",
         "href": "/community"
       }
-
     ],
     "categories": [
       {
@@ -51,8 +50,28 @@
         "text": "Home"
       },
       {
+        "to": "/",
+        "hash": "mission-section",
+        "text": "Mission"
+      },
+      {
+        "to": "/",
+        "hash": "projects-section",
+        "text": "Projects"
+      },
+      {
+        "to": "/",
+        "hash": "events-section",
+        "text": "Events"
+      },
+      {
         "to": "/gallery",
         "text": "Archive"
+      },
+      {
+        "to": "/",
+        "hash": "volunteer-section",
+        "text": "Volunteer"
       }
     ]
   },

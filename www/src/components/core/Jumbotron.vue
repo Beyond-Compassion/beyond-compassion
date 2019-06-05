@@ -58,12 +58,12 @@
       },
 
       gradient () {
-        if (this.$vuetify.breakpoint.xs) {
-          // return 'to bottom, rgba(240, 244, 248, .9), 20%, rgba(33, 111, 171, .7) 40%, rgba(21, 65, 98, .7) 90%'
-          return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
-        }
+        // if (this.$vuetify.breakpoint.xs) {
+        //   return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
+        // }
 
-        return 'to bottom, rgba(240, 244, 248, 1), 15%, rgba(33, 111, 171, .8) 40%, rgba(21, 65, 98, .8) 90%'
+        // return 'to bottom, rgba(240, 244, 248, 1), 15%, rgba(33, 111, 171, .8) 40%, rgba(21, 65, 98, .8) 90%'
+        return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
       },
 
       isHome () {
