@@ -12,13 +12,17 @@
         tag="span"
         to="/"
       >
-        <a :style="{ textDecoration: 'none' }">
+        <!-- <a :style="{ textDecoration: 'none' }">
           Beyond Compassion
           <img
             src="/static/logo-sun.svg"
             width="40"
           >
-        </a>
+        </a> -->
+        <img
+          src="/static/logo-long.svg"
+          width="250"
+        >
       </router-link>
       <span class="title primaryLight--text" />
     </v-toolbar-title>
