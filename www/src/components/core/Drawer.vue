@@ -5,6 +5,7 @@
     temporary
     right
     fixed
+    :width="175"
   >
     <v-list>
       <v-list-tile>
@@ -13,22 +14,33 @@
           icon
           @click="toggleDrawer"
         >
-          <v-icon color="greyDark">mdi-close</v-icon>
+          <v-icon color="greyDark">
+            mdi-close
+          </v-icon>
         </v-btn>
       </v-list-tile>
       <v-list-tile
         v-for="(item, i) in items"
         :key="i"
-        :to="item.to"
+        :to="{ path: item.to, ...(item.hash ? { hash: item.hash } : {}) }"
       >
         <v-list-tile-title v-text="item.text" />
+      </v-list-tile>
+      <!-- :to="{ path: '/', hash: 'donate-section' }" -->
+      <v-list-tile
+        class="accentLightest"
+        :to="{ path: '/donate' }"
+      >
+        <v-list-tile-title class="greyDark--text">
+          Donate
+        </v-list-tile-title>
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-  // Utilities
+// Utilities
   import { mapState, mapMutations } from 'vuex'
 
   export default {

@@ -25,12 +25,12 @@
               >
                 <h1
                   :class="titleClass"
-                  v-html="title"
+                  v-html="$options.filters.titleCase(title)"
                 />
                 <div
                   v-if="subTitle"
                   class="body greyLightest--text"
-                  v-html="subTitle"
+                  v-html="$options.filters.titleCase(subTitle)"
                 />
               </v-flex>
             </v-fade-transition>
@@ -58,12 +58,12 @@
       },
 
       gradient () {
-        if (this.$vuetify.breakpoint.xs) {
-          // return 'to bottom, rgba(240, 244, 248, .9), 20%, rgba(33, 111, 171, .7) 40%, rgba(21, 65, 98, .7) 90%'
-          return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
-        }
+        // if (this.$vuetify.breakpoint.xs) {
+        //   return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
+        // }
 
-        return 'to bottom, rgba(240, 244, 248, 1), 15%, rgba(33, 111, 171, .8) 40%, rgba(21, 65, 98, .8) 90%'
+        // return 'to bottom, rgba(240, 244, 248, 1), 15%, rgba(33, 111, 171, .8) 40%, rgba(21, 65, 98, .8) 90%'
+        return 'to bottom, rgba(240, 244, 248, 1), 30%, rgba(33, 111, 171, .8) 55%, rgba(21, 65, 98, .8) 90%'
       },
 
       isHome () {
@@ -79,7 +79,7 @@
         return this.$t(`${this.namespace}.jumbotronSubTitle`)
       },
       heroImage () {
-        return `/static/${this.namespace.toLowerCase()}-hero.png`
+        return `/static/${this.namespace.toLowerCase()}-hero.jpg`
       }
       // heroImage () {
       //   return `/static/shoes-003-BW.png`

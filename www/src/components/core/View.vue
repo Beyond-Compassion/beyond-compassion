@@ -12,12 +12,12 @@
       return {
         titleTemplate: '%s — Alpha Theme'
       }
-    },
-
-    watch: {
-      '$route': function () {
-        this.$vuetify.goTo(0)
-      }
     }
+
+    // watch: {
+    //   '$route': function () {
+    //     this.$vuetify.goTo(0)
+    //   }
+    // }
   }
 </script>

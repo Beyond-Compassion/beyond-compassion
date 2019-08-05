@@ -23,7 +23,6 @@
         "text": "Commitment to the Community",
         "href": "/community"
       }
-
     ],
     "categories": [
       {
@@ -51,8 +50,14 @@
         "text": "Home"
       },
       {
-        "to": "/gallery",
-        "text": "Archive"
+        "to": "/",
+        "hash": "mission-section",
+        "text": "Mission"
+      },
+      {
+        "to": "/",
+        "hash": "projects-section",
+        "text": "Projects"
       }
     ]
   },
@@ -68,8 +73,8 @@
     "submit": "Submit"
   },
   "Home": {
-    "jumbotronTitle": "Velit Dictumst Elit Nibh",
-    "jumbotronSubTitle": "Blandit elit vehicula elit vehicula sagittis faucibus vestibulum",
+    "jumbotronTitle": "Help your neighbor",
+    "jumbotronSubTitle": "Share your compassion with the world",
     "cardFeatures": [
       {
         "title": "Award-winning architecture",
@@ -90,9 +95,9 @@
     "testimonialsTitle": "Testimonials",
     "testimonials": [
       {
-        "author": "John Doe",
-        "title": "President, Beyond Compassion",
-        "quote": "Sollicitudin ad laoreet turpis taciti massa dictumst posuere justo, porttitor aliquam proin pulvinar proin dui metus et, rutrum metus lectus facilisis ut vestibulum accumsan per sagittis vehicula cubilia elit sollicitudin eros nunc aliquam."
+        "author": "Coretta Scott King",
+        "title": "",
+        "quote": "The greatness of a community is most accurately measured by the compassionate actions of its members."
       },
       {
         "author": "Jason Schraiber",
@@ -105,45 +110,47 @@
         "quote": "The complexities and challenges AlphaConstruction successfully overcame on our behalf includes substantial permit obstacles, coordination and selection support of all design and finish materials, and the diffculty of integrating existing and new structures."
       }
     ],
+    "donate": "help support us",
     "mission": {
       "items": [
         {
           "src": "/static/heart-sketch.svg",
-          "title": "helping those in need",
-          "body": "Lorem ipsum maecenas ullamcorper vivamus tortor, lorem egestas vestibulum eget volutpat inceptos, varius ultrices justo lacus."
+          "title": "help beyond compassion",
+          "body": "We aim to help the underprivileged by providing for their well-being and their basic necessities in a compassionate manner."
         },
         {
           "src": "/static/earth-sketch.svg",
-          "title": "giving globally",
-          "body": "Duis imperdiet fusce aliquet adipiscing aliquet sed risus orci, fames tincidunt consequat nunc sit vulputate metus."
+          "title": "giving without borders",
+          "body": "Not only do we aid domestic communities, we also give globally to international communities."
         },
         {
           "src": "/static/handshake-sketch.svg",
-          "title": "working hands-on",
-          "body": "Hendrerit sit consectetur porttitor turpis libero, curae phasellus cubilia blandit commodo risus, justo turpis litora in."
+          "title": "grow within communities",
+          "body": "To help tighten the bond within a community, our projects requires Beyond Compassions involvement. In order to help them compassionately, the best way is to understand and respect their way of life and come up with resolution accordingly."
         }
       ]
     },
     "projects": {
       "items": [
         {
-          "name": "some charity project",
-          "description": "A description of what is happening the picture. As you can see, there is a lot of great stuff happening here. I really did enjoy myself at this event.",
-          "photo": "/static/event-001.jpg"
+          "name": "Beyond Compassion 2019 Holiday Project: Bringing the holidays to a Filipino Village",
+          "description": "In December 2019 Beyond Compassion will be hosting its holiday charity event in Mindinao, where the Philippines poorest regions are located. Beyond Compassion works with the Fiipino Army to get supplies to some of the most remote, destitute villages in the Philippines. This event is held in a compassionate manner. Guests receive gifts such as rice, beans, clothing and shoes. Villagers participate it games such as picking money from buckets while blindfolding. The events purpose is to make participants happy and joyful while receiving basic necessities and money for future needs.",
+          "photo": "/static/event-2019-001.jpg",
+          "past": false
         },
         {
-          "name": "weekly fundraiser in new york city",
-          "description": "Allow me to explain this image. The image has some people doing some things.",
-          "photo": "/static/event-002.jpg"
-        },
-        {
-          "name": "a different charity project",
-          "description": "This image is very complex, but i can tell you about it. It was from an incredible event that happened some time in the past.",
-          "photo": "/static/event-003.jpg"
+          "name": "2018 Holiday Celebration",
+          "description": "Beyond Compassion hosted it’s 2018 Holiday celebration in Davao, Philippines. All participating villagers were treated to a sumptuous holiday meal in a familiar environment. Children participated in games to win prizes for their families. The highlight of the celebration was when everyone tried their luck to pick the highest denomination of money from a bucket while blindfolded. Guests received parting gifts such as tools, food or clothes to enjoy when the party was over.",
+          "photo": "/static/event-2018-001.jpg",
+          "past": true
         }
       ]
-  }
-},
+    }
+  },
+  "Donate": {
+    "jumbotronTitle": "Please Donate",
+    "jumbotronSubTitle": "We rely on donations from caring people like you"
+  },
   "Gallery": {
     "jumbotronTitle": "Event Archive",
     "jumbotronSubTitle": "To all our guests: thank you for coming!"

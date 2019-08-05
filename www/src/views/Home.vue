@@ -2,6 +2,7 @@
   <!-- MIKE: you have to set a resize event listener to reset the cards when a
 breakpoint is hit -->
   <div>
+    <!-- quote section -->
     <v-container
       fill-height
       class="greyDark--text"
@@ -11,7 +12,6 @@ breakpoint is hit -->
         align-center
         wrap
       >
-        <!-- quote -->
         <v-flex
           v-for="(testimonial, i) in testimonials.slice(0,1)"
           :key="i"
@@ -29,7 +29,8 @@ breakpoint is hit -->
       </v-layout>
     </v-container>
 
-    <jumbotron-two />
+    <!-- donate section -->
+    <jumbotron-two id="donate-section" />
 
     <v-container
       fill-height
@@ -42,6 +43,7 @@ breakpoint is hit -->
       >
         <!-- mission title -->
         <v-flex
+          id="mission-section"
           xs12
           class="mt-5 pt-5 text-xs-center"
         >
@@ -55,6 +57,7 @@ breakpoint is hit -->
 
         <!-- projects title -->
         <v-flex
+          id="projects-section"
           xs12
           class="mt-3 pt-4 text-xs-center"
         >
@@ -65,10 +68,15 @@ breakpoint is hit -->
       </v-layout>
     </v-container>
 
-    <!-- project carousel -->
-    <project-carousel :projects="projects" />
+    <!-- project section -->
+    <project-carousel
+      id="projects-section"
+      :projects="projects"
+    />
 
+    <!-- events section -->
     <v-container
+      v-if="false"
       fill-height
       class="greyDark--text"
     >
@@ -79,6 +87,7 @@ breakpoint is hit -->
       >
         <!-- events title -->
         <v-flex
+          id="events-section"
           xs12
           class="mt-5 pt-5 mb-2 text-xs-center"
         >
@@ -144,9 +153,7 @@ breakpoint is hit -->
   export default {
     metaInfo: {
       title: 'Beyond Compassion',
-      meta: [
-        { name: 'description', content: 'A pretty cool NPO' }
-      ]
+      meta: [{ name: 'description', content: 'A pretty cool NPO' }]
     },
 
     components: {
@@ -223,6 +230,10 @@ breakpoint is hit -->
 
       projects () {
         return this.$t('Home.projects.items')
+      },
+
+      donate () {
+        return this.$t('Home.donate')
       }
     }
   }
@@ -242,11 +253,13 @@ breakpoint is hit -->
 }
 
 .v-navigation-drawer .v-list__tile:not(.v-list__tile--active) {
-  color: #243B53
+  color: #243b53;
 }
 
-.v-btn--active.cta:before, .v-btn.cta:hover:before, .v-btn.cta:focus:before {
-  background-color: #B44D12
+.v-btn--active.cta:before,
+.v-btn.cta:hover:before,
+.v-btn.cta:focus:before {
+  background-color: #b44d12;
 }
 
 p {
@@ -254,6 +267,6 @@ p {
 }
 
 .alpha-testimonial__content .mdi-format-quote-open:before {
-  color: #829AB1;
+  color: #829ab1;
 }
 </style>

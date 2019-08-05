@@ -16,6 +16,7 @@
         class="mb-5"
       >
         <alpha-gallery
+          id="test"
           :categories="categories"
           :projects="projects"
         />
