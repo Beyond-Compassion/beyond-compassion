@@ -30,8 +30,9 @@ const router = new Router({
       component: () => import('@/views/Gallery')
     },
     {
-      path: '/',
-      name: 'Donate'
+      path: '/donate',
+      name: 'Donate',
+      component: () => import('@/views/Donate')
     }
   ]
 })

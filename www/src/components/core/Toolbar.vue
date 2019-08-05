@@ -44,12 +44,13 @@
       </v-btn>
 
       <!-- donate button -->
+      <!-- :to="{ path: '/', hash: 'donate-section' }" -->
       <v-btn
         depressed
         color="accentLightest cta"
         class="greyDark--text"
         :ripple="{ class: 'primaryLight--text' }"
-        :to="{ path: '/', hash: 'donate-section' }"
+        :to="{ path: '/donate'}"
       >
         <span>donate</span>
       </v-btn>
@@ -68,7 +69,7 @@
 
 <script>
 // Utilities
-  import { mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex';
 
   export default {
     data: () => ({
@@ -78,7 +79,7 @@
     computed: {
       items () {
         return this.$t('View.items')
-      }
+    }
     },
 
     methods: {
@@ -86,7 +87,7 @@
       onScroll () {
         this.isScrolling =
           (window.pageYOffset || document.documentElement.scrollTop || 0) > 100
-      }
+    }
     }
   }
 </script>

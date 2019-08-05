@@ -23,9 +23,9 @@
                 text-xs-center
               >
                 <div
-                  v-if="subTitle"
+                  v-if="donate"
                   class="body-1 greyLightest--text"
-                  v-html="$options.filters.titleCase(subTitle)"
+                  v-html="$options.filters.titleCase(donate)"
                 />
                 <v-btn
                   depressed
@@ -33,6 +33,7 @@
                   color="accentLightest"
                   class="greyDark--text cta mt-3"
                   :ripple="{ class: 'primaryLight--text' }"
+                  to="/donate"
                 >
                   donate now
                 </v-btn>
@@ -73,12 +74,15 @@
       subTitle () {
         return this.$t(`${this.namespace}.jumbotronSubTitle`)
       },
+      donate () {
+        return this.$t(`${this.namespace}.donate`)
+      },
       heroImage () {
         return `/static/${this.namespace.toLowerCase()}-hero.png`
       }
-      // heroImage () {
-      //   return `/static/shoes-003-BW.png`
-      // }
+    // heroImage () {
+    //   return `/static/shoes-003-BW.png`
+    // }
     },
 
     mounted () {

@@ -76,6 +76,7 @@ breakpoint is hit -->
 
     <!-- events section -->
     <v-container
+      v-if="false"
       fill-height
       class="greyDark--text"
     >

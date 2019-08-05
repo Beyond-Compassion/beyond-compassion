@@ -36,15 +36,15 @@
               <p class="body-1 greyLightest--text">
                 {{ project.description }}
               </p>
-              <span class="title accentLightest--text">$3,000 </span>
+              <!-- <span class="title accentLightest--text">$3,000 </span>
               <span class="body-1 greyLessDark--text">of $10,000</span>
               <v-progress-linear
                 background-color="greyLight"
                 color="accentLightest"
                 value="30"
-              />
+              /> -->
             </v-card-text>
-            <v-card-actions>
+            <v-card-actions v-if="!project.past">
               <!-- <v-btn
                 flat
                 large
@@ -59,6 +59,7 @@
                 large
                 color="accentLightest"
                 depressed
+                to="/donate"
               >
                 donate now
               </v-btn>

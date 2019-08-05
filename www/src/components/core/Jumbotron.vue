@@ -79,7 +79,7 @@
         return this.$t(`${this.namespace}.jumbotronSubTitle`)
       },
       heroImage () {
-        return `/static/${this.namespace.toLowerCase()}-hero.png`
+        return `/static/${this.namespace.toLowerCase()}-hero.jpg`
       }
       // heroImage () {
       //   return `/static/shoes-003-BW.png`

@@ -26,11 +26,14 @@
       >
         <v-list-tile-title v-text="item.text" />
       </v-list-tile>
+      <!-- :to="{ path: '/', hash: 'donate-section' }" -->
       <v-list-tile
         class="accentLightest"
-        :to="{ path: '/', hash: 'donate-section' }"
+        :to="{ path: '/donate' }"
       >
-        <v-list-tile-title class="greyDark--text">Donate</v-list-tile-title>
+        <v-list-tile-title class="greyDark--text">
+          Donate
+        </v-list-tile-title>
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
