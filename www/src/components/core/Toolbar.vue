@@ -69,7 +69,7 @@
 
 <script>
 // Utilities
-  import { mapMutations } from 'vuex';
+  import { mapMutations } from 'vuex'
 
   export default {
     data: () => ({
@@ -79,7 +79,7 @@
     computed: {
       items () {
         return this.$t('View.items')
-    }
+      }
     },
 
     methods: {
@@ -87,7 +87,7 @@
       onScroll () {
         this.isScrolling =
           (window.pageYOffset || document.documentElement.scrollTop || 0) > 100
-    }
+      }
     }
   }
 </script>

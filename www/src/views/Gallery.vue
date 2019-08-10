@@ -5,14 +5,14 @@
       align-center
       wrap
     >
-      <v-flex
+      <!-- <v-flex
         xs12
         class="text-xs-center"
       >
         <core-dialog :items="projects" />
-      </v-flex>
+      </v-flex> -->
       <v-flex
-        xs8
+        xs10
         class="mb-5"
       >
         <alpha-gallery
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import CoreDialog from '@/components/core/Dialog.vue'
+  // import CoreDialog from '@/components/core/Dialog.vue'
 
   export default {
     metaInfo: {
@@ -37,7 +37,7 @@
     },
 
     components: {
-      CoreDialog
+      // CoreDialog
     },
 
     data () {
