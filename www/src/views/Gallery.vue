@@ -6,18 +6,13 @@
       align-center
       wrap
     >
-      <!-- <v-flex
-        xs12
-        class="text-xs-center"
-      >
-        <core-dialog :items="projects" />
-      </v-flex> -->
       <v-flex
         xs10
         class="mb-5"
       >
         <!-- :projects="populatedProjects()" -->
-        <alpha-gallery
+        <!-- <alpha-gallery -->
+        <core-gallery
           id="test"
           :categories="categories"
           :projects="projects"
@@ -28,8 +23,8 @@
 </template>
 
 <script>
-// import CoreDialog from '@/components/core/Dialog.vue'
   import * as R from 'ramda'
+  import CoreGallery from '@/components/core/Gallery.vue'
 
   export default {
     metaInfo: {
@@ -43,7 +38,7 @@
     },
 
     components: {
-    // CoreDialog
+      CoreGallery
     },
 
     data () {
@@ -74,7 +69,7 @@
     },
 
     beforeCreate () {
-      
+
     },
 
     methods: {
