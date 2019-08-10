@@ -11,10 +11,16 @@ const processImage = (sourceBase, targetBase) => source => {
   return Jimp
   .read(sourceBase + source)
   .then(img => {
-    return img
+    var ret = img
       .resize(Jimp.AUTO, 700)
       .greyscale()
       .write(targetBase + source);
+
+    if (source == "gallery-hero.jpg") {
+      ret = ret.crop( 0, 0, 700, 400);
+    }
+
+    return ret.write(targetBase + source);
   })
   .catch(err => {
     console.error(err);
@@ -25,7 +31,7 @@ const processImageBatch = (sourceBase, targetBase) => sources => {
   const promises = sources.map(processImage(sourceBase, targetBase));
 
   Promise.all(promises).then(() => console.log('success!'))
-} 
+}
 
 fsp
 .readdir('sources')
