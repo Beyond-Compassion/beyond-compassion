@@ -31,7 +31,7 @@ const selectEvents = (sliceRange, data) => L.collectAs(
 if (process.env.NODE_ENV == 'development') {
   const test = async () => {
     const dummy = await getEvents();
-    console.log(dummy);
+    // console.log(dummy);
     const testSlice = randomSliceRange(0, 50, 5);
     selectEvents(testSlice, dummy); // ?
   }

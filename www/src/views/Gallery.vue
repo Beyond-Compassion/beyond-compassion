@@ -1,5 +1,6 @@
 <template>
   <v-container fill-height>
+    <!-- currentImage: {{ currentImage }} -->
     <v-layout
       justify-center
       align-center
@@ -15,6 +16,7 @@
         xs10
         class="mb-5"
       >
+        <!-- :projects="populatedProjects()" -->
         <alpha-gallery
           id="test"
           :categories="categories"
@@ -26,23 +28,28 @@
 </template>
 
 <script>
-  // import CoreDialog from '@/components/core/Dialog.vue'
+// import CoreDialog from '@/components/core/Dialog.vue'
+  import * as R from 'ramda'
 
   export default {
     metaInfo: {
       title: 'Gallery',
       meta: [
-        { name: 'description', content: 'Customized vue-cli templates for Vue and Vuetify' }
+        {
+          name: 'description',
+          content: 'Customized vue-cli templates for Vue and Vuetify'
+        }
       ]
     },
 
     components: {
-      // CoreDialog
+    // CoreDialog
     },
 
     data () {
       return {
-        dialog: false
+        dialog: false,
+        currentImage: 'unset'
       }
     },
 
@@ -50,8 +57,52 @@
       categories () {
         return this.$t('Projects.categories')
       },
+
       projects () {
         return this.$t('Projects.projects')
+
+      // return R.map(
+      //   x => {
+      //     return R.assoc(
+      //       'action'
+      //       // MIKE: blarg, a callback, really?
+      //     )
+      //   },
+      //   this.$t('Projects.projects')
+      // )
+      }
+    },
+
+    beforeCreate () {
+      
+    },
+
+    methods: {
+      setCurrentImage (image) {
+        this.currentImage = image
+      },
+
+      populatedProjects () {
+        const projects = this.$t('Projects.projects')
+
+        // const setCurrentImage = this.setCurrentImage.bind(this)
+
+        const ret = R.map(project => {
+          return R.assoc(
+            'action',
+            // setCurrentImage(project.img),
+            this.setCurrentImage(project.img),
+            project
+          )
+        }, this.$t('Projects.projects'))
+
+        console.log('(populatedProjects) projects:')
+        console.log(projects)
+
+        console.log('(populatedProjects) ret:')
+        console.log(ret)
+
+        return ret
       }
     }
   }

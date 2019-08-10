@@ -145,7 +145,7 @@
         {
           "name": "2018 Holiday Celebration",
           "description": "Beyond Compassion hosted it’s 2018 Holiday celebration in Davao, Philippines. All participating villagers were treated to a sumptuous holiday meal in a familiar environment. Children participated in games to win prizes for their families. The highlight of the celebration was when everyone tried their luck to pick the highest denomination of money from a bucket while blindfolded. Guests received parting gifts such as tools, food or clothes to enjoy when the party was over.",
-          "photo": "/static/event-2018-001.jpg",
+          "photo": "/static/event-2018-001-bw.jpg",
           "past": true
         }
       ]
@@ -174,27 +174,27 @@
     ],
     "projects": [
       {
-        "name": "Lorem Ipsum",
+        "name": "event-2019-002",
         "img": "event-2019-002.jpg",
         "categories": [1]
       },
       {
-        "name": "Lorem Ipsum",
+        "name": "event-2019-003",
         "img": "event-2019-003.jpg",
         "categories": [1]
       },
       {
-        "name": "Lorem Ipsum",
+        "name": "event-2019-004",
         "img": "event-2019-004.jpg",
         "categories": [1]
       },
       {
-        "name": "Lorem Ipsum",
+        "name": "event-2019-005",
         "img": "event-2019-005.jpg",
         "categories": [1]
       },
       {
-        "name": "Lorem Ipsum",
+        "name": "event-2019-006",
         "img": "event-2019-006.jpg",
         "categories": [1]
       }

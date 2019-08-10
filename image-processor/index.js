@@ -16,9 +16,13 @@ const processImage = (sourceBase, targetBase) => source => {
       .greyscale()
       .write(targetBase + source);
 
-    if (source == "gallery-hero.jpg") {
-      ret = ret.crop( 0, 0, 700, 400);
+    if ((source == "gallery-hero.jpg") || (source == "donate-hero.jpg")) {
+      ret = ret.crop( 0, 0, 700, 450);
     }
+
+    // if (source == "donate-hero.jpg") {
+    //   ret = ret.crop( 0, 0, 700, 450);
+    // }
 
     return ret.write(targetBase + source);
   })
