@@ -15,16 +15,17 @@ const processImage = (sourceBase, targetBase) => source => {
       .resize(Jimp.AUTO, 700)
       .greyscale()
       // .gaussian(1)
-      .posterize(7)
+      .posterize(6)
       .write(targetBase + source);
 
-    if ((source == "gallery-hero.jpg") || (source == "donate-hero.jpg")) {
-      ret = ret.crop( 0, 0, 700, 450);
+      // if ((source == "gallery-hero.jpg") || (source == "donate-hero.jpg")) {
+    if (source == "gallery-hero.jpg") {
+      ret = ret.crop(30, 0, 900, 450);
     }
 
-    // if (source == "donate-hero.jpg") {
-    //   ret = ret.crop( 0, 0, 700, 450);
-    // }
+    if (source == "donate-hero.jpg") {
+      ret = ret.crop(0, 0, 700, 450);
+    }
 
     return ret.write(targetBase + source);
   })
