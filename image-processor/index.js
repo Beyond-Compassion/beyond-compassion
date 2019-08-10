@@ -14,6 +14,8 @@ const processImage = (sourceBase, targetBase) => source => {
     var ret = img
       .resize(Jimp.AUTO, 700)
       .greyscale()
+      // .gaussian(1)
+      .posterize(7)
       .write(targetBase + source);
 
     if ((source == "gallery-hero.jpg") || (source == "donate-hero.jpg")) {

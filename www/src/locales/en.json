@@ -137,14 +137,14 @@
     "projects": {
       "items": [
         {
-          "name": "Beyond Compassion 2019 Holiday Project: Bringing the holidays to a Filipino Village",
-          "description": "In December 2019 Beyond Compassion will be hosting its holiday charity event in Mindinao, where the Philippines poorest regions are located. Beyond Compassion works with the Fiipino Army to get supplies to some of the most remote, destitute villages in the Philippines. This event is held in a compassionate manner. Guests receive gifts such as rice, beans, clothing and shoes. Villagers participate it games such as picking money from buckets while blindfolding. The events purpose is to make participants happy and joyful while receiving basic necessities and money for future needs.",
+          "name": "2019 Holiday Celebration",
+          "description": "In December 2019 Beyond Compassion will be hosting its holiday charity event in Mindinao, where the Philippines poorest regions are located. We will work with the Filipino Army to get supplies to some of the most remote, destitute villages in the Philippines. Guests receive gifts such as rice, beans, clothing and shoes. Villagers can participate in fun raffles and games such as picking money from buckets while blindfolded.",
           "photo": "/static/event-2019-001.jpg",
           "past": false
         },
         {
           "name": "2018 Holiday Celebration",
-          "description": "Beyond Compassion hosted it’s 2018 Holiday celebration in Davao, Philippines. All participating villagers were treated to a sumptuous holiday meal in a familiar environment. Children participated in games to win prizes for their families. The highlight of the celebration was when everyone tried their luck to pick the highest denomination of money from a bucket while blindfolded. Guests received parting gifts such as tools, food or clothes to enjoy when the party was over.",
+          "description": "Beyond Compassion hosted it’s 2018 Holiday celebration in Davao, Philippines. All participating villagers were treated to a sumptuous holiday meal in a familiar environment. Children participated in games to win prizes for their families. Guests received parting gifts such as tools, food or clothes to enjoy when the party was over.",
           "photo": "/static/event-2018-001-bw.jpg",
           "past": true
         }
