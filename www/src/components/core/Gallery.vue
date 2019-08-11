@@ -9,33 +9,36 @@
         <span v-text="category.text" />
       </v-tab>
     </v-tabs>
-    <v-container grid-list-xl>
+    <v-container
+      :grid-list-sm="$vuetify.breakpoint.xs"
+      :grid-list-md="$vuetify.breakpoint.smAndUp"
+      fluid
+      style="min-height: 450px"
+    >
       <transition-group
         tag="v-layout"
         name="fade-transition"
         class="wrap child-flex"
-        style="min-height: 450px"
       >
         <v-flex
           v-for="project in computedProjects"
-          :key="project.img"
-          lg3
-          md4
-          sm6
-          xs12
+          :key="project.name"
+          sm2
+          xs3
           gallery-card
         >
           <slot
             v-if="$scopedSlots.default"
             :project="project"
           />
-          <v-card
+          <v-img
             v-else
             v-ripple
-            height="200px"
             hover
             class="white--text"
-            :img="`/static/${project.img}`"
+            :src="`/static/${project.img}`"
+            aspect-ratio="1"
+            :style="{cursor: 'pointer'}"
             @click="handleSelectImg(project.img)"
           />
         </v-flex>

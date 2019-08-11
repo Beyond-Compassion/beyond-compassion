@@ -9,12 +9,11 @@
         xs12
         class="text-xs-center"
       >
-        <!-- :dialog="dialog" -->
         <core-dialog :current-image="currentImage" />
       </v-flex>
 
       <v-flex
-        xs10
+        xs11
         class="mb-5"
       >
         <core-gallery
@@ -29,7 +28,7 @@
 </template>
 
 <script>
-  import * as R from 'ramda'
+  // import * as R from 'ramda'
   import CoreGallery from '@/components/core/Gallery.vue'
   import CoreDialog from '@/components/core/Dialog.vue'
 

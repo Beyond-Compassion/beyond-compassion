@@ -2,14 +2,11 @@
   <!-- width="500" -->
   <v-dialog
     v-model="inputValue"
+    max-width="80%"
+    :max-height="maxHeights[$vuetify.breakpoint.name]"
   >
-    <!-- MIKE: try using a v-card with an "img" attribute! -->
-    <!-- MIKE: try using a v-card with an "img" attribute! -->
-    <!-- MIKE: try using a v-card with an "img" attribute! -->
-    <!-- aspect-ratio="1.7" -->
     <v-img
       :src="`static/${currentImage}`"
-      contain
     />
   </v-dialog>
 </template>
@@ -35,7 +32,27 @@
         set (val) {
           this.setImageDialog(val)
         }
+      },
+
+      maxHeights () {
+        return {
+          xs: 500,
+          sm: 500,
+          md: 900,
+          lg: 900,
+          xl: 900
+        }
       }
+
+      // maxWidths () {
+      //   return {
+      //     xs: 500,
+      //     sm: 500,
+      //     md: 900,
+      //     lg: 900,
+      //     xl: 900
+      //   }
+      // }
     },
 
     methods: {
