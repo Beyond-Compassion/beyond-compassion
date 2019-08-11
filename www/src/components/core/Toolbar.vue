@@ -84,6 +84,7 @@
 
     methods: {
       ...mapMutations(['toggleDrawer']),
+
       onScroll () {
         this.isScrolling =
           (window.pageYOffset || document.documentElement.scrollTop || 0) > 100

@@ -1,21 +1,27 @@
 <template>
   <v-container fill-height>
-    <!-- currentImage: {{ currentImage }} -->
     <v-layout
       justify-center
       align-center
       wrap
     >
       <v-flex
+        xs12
+        class="text-xs-center"
+      >
+        <!-- :dialog="dialog" -->
+        <core-dialog :current-image="currentImage" />
+      </v-flex>
+
+      <v-flex
         xs10
         class="mb-5"
       >
-        <!-- :projects="populatedProjects()" -->
-        <!-- <alpha-gallery -->
         <core-gallery
           id="test"
           :categories="categories"
           :projects="projects"
+          @selectImg="handleSelectImg"
         />
       </v-flex>
     </v-layout>
@@ -25,6 +31,7 @@
 <script>
   import * as R from 'ramda'
   import CoreGallery from '@/components/core/Gallery.vue'
+  import CoreDialog from '@/components/core/Dialog.vue'
 
   export default {
     metaInfo: {
@@ -38,12 +45,13 @@
     },
 
     components: {
+      CoreDialog,
       CoreGallery
     },
 
     data () {
       return {
-        dialog: false,
+        // dialog: false,
         currentImage: 'unset'
       }
     },
@@ -55,49 +63,19 @@
 
       projects () {
         return this.$t('Projects.projects')
-
-      // return R.map(
-      //   x => {
-      //     return R.assoc(
-      //       'action'
-      //       // MIKE: blarg, a callback, really?
-      //     )
-      //   },
-      //   this.$t('Projects.projects')
-      // )
       }
     },
 
-    beforeCreate () {
-
-    },
+    beforeCreate () {},
 
     methods: {
-      setCurrentImage (image) {
-        this.currentImage = image
+      handleSelectImg (img) {
+        this.currentImage = img
+        this.dialog = true
       },
 
-      populatedProjects () {
-        const projects = this.$t('Projects.projects')
-
-        // const setCurrentImage = this.setCurrentImage.bind(this)
-
-        const ret = R.map(project => {
-          return R.assoc(
-            'action',
-            // setCurrentImage(project.img),
-            this.setCurrentImage(project.img),
-            project
-          )
-        }, this.$t('Projects.projects'))
-
-        console.log('(populatedProjects) projects:')
-        console.log(projects)
-
-        console.log('(populatedProjects) ret:')
-        console.log(ret)
-
-        return ret
+      setCurrentImage (image) {
+        this.currentImage = image
       }
     }
   }

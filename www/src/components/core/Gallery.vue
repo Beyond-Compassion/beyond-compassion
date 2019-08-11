@@ -36,7 +36,7 @@
             hover
             class="white--text"
             :img="`/static/${project.img}`"
-            @click="$emit('selectImg', project.img)"
+            @click="handleSelectImg(project.img)"
           />
         </v-flex>
       </transition-group>
@@ -45,6 +45,8 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
     name: 'CoreGallery',
 
@@ -59,9 +61,11 @@
       }
     },
 
-    data: () => ({
-      category: null
-    }),
+    data () {
+      return {
+        category: null
+      }
+    },
 
     computed: {
       computedProjects () {
@@ -72,6 +76,13 @@
     },
 
     methods: {
+      ...mapMutations(['toggleImageDialog']),
+
+      handleSelectImg (img) {
+        this.toggleImageDialog()
+        this.$emit('selectImg', img)
+      },
+
       select (category) {
         this.category = category.filter
       }
