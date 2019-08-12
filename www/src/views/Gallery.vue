@@ -9,7 +9,10 @@
         xs12
         class="text-xs-center"
       >
-        <core-dialog :current-image="currentImage" />
+        <core-dialog
+          :current-image="currentImage"
+          :video="currentVideo"
+        />
       </v-flex>
 
       <v-flex
@@ -28,7 +31,7 @@
 </template>
 
 <script>
-  // import * as R from 'ramda'
+// import * as R from 'ramda'
   import CoreGallery from '@/components/core/Gallery.vue'
   import CoreDialog from '@/components/core/Dialog.vue'
 
@@ -51,7 +54,8 @@
     data () {
       return {
         // dialog: false,
-        currentImage: 'unset'
+        currentImage: '',
+        currentVideo: ''
       }
     },
 
@@ -68,8 +72,9 @@
     beforeCreate () {},
 
     methods: {
-      handleSelectImg (img) {
+      handleSelectImg ({ img, video }) {
         this.currentImage = img
+        this.currentVideo = video
         this.dialog = true
       },
 

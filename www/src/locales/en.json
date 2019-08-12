@@ -197,6 +197,12 @@
         "name": "event-2019-006",
         "img": "event-2019-006.jpg",
         "categories": [1]
+      },
+      {
+        "name": "event-2019-001 video",
+        "img": "event-2019-001-thumbnail.jpg",
+        "video": "event-2019-001.mp4",
+        "categories": [1]
       }
     ]
   }

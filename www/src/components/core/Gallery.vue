@@ -39,7 +39,7 @@
             :src="`/static/${project.img}`"
             aspect-ratio="1"
             :style="{cursor: 'pointer'}"
-            @click="handleSelectImg(project.img)"
+            @click="handleSelectImg(project.img, project.video)"
           />
         </v-flex>
       </transition-group>
@@ -81,9 +81,9 @@
     methods: {
       ...mapMutations(['toggleImageDialog']),
 
-      handleSelectImg (img) {
+      handleSelectImg (img, video) {
         this.toggleImageDialog()
-        this.$emit('selectImg', img)
+        this.$emit('selectImg', { img, video })
       },
 
       select (category) {
