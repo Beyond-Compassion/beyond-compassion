@@ -12,6 +12,7 @@ const processImage = (sourceBase, targetBase) => source => {
   .read(sourceBase + source)
   .then(img => {
     var ret = img
+      // MIKE: resize this after you crop - not before
       .resize(Jimp.AUTO, 700)
       .greyscale()
       .write(targetBase + source);

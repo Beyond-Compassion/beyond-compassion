@@ -2,7 +2,6 @@
   <v-toolbar
     v-scroll="onScroll"
     app
-    dense
     :flat="!isScrolling"
     :color="!isScrolling ? 'transparent' : 'greyLightest'"
   >
@@ -13,11 +12,11 @@
         to="/"
       >
         <a :style="{ textDecoration: 'none', position: 'relative', bottom: '5px' }">
-          Beyond Compassion
+          <!-- Beyond Compassion -->
           <img
-            :style="{ position: 'relative', top: '10px' }"
-            src="/static/logo-sun-hand-mid-brightness.svg"
-            width="40"
+            :style="{ position: 'relative', top: '8px', left: '0px' }"
+            src="/static/beyond-compassion-logo-V2-text-light.svg"
+            width="170"
           >
         </a>
         <!-- <img
