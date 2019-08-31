@@ -14,9 +14,9 @@
         <a :style="{ textDecoration: 'none', position: 'relative', bottom: '5px' }">
           <!-- Beyond Compassion -->
           <img
-            :style="{ position: 'relative', top: '8px', left: '0px' }"
+            :style="{ position: 'relative', top: '8px', left: '-5px' }"
             src="/static/beyond-compassion-logo-V2-text-light.svg"
-            width="170"
+            width="160"
           >
         </a>
         <!-- <img
@@ -86,7 +86,7 @@
 
       onScroll () {
         this.isScrolling =
-          (window.pageYOffset || document.documentElement.scrollTop || 0) > 100
+          (window.pageYOffset || document.documentElement.scrollTop || 0) > 20
       }
     }
   }
