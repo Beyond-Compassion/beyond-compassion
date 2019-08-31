@@ -42,7 +42,7 @@
       <v-divider />
 
       <v-card-text class="white--text">
-        <span>Beyond compassion is applying for 501(c)(3) status so all Donations are currently NOT tax exempt</span>
+        <span>Beyond compassion is a 501(c)(3) organization. All Donations are TAX EXEMPT</span>
         <br>
         <span>&copy;2019 — <strong>{{ 'beyond compassion' | titleCase }}</strong></span>
       </v-card-text>
