@@ -21,11 +21,9 @@ breakpoint is hit -->
             {{ 'Ways to Donate' }}
           </p>
           <p>
-            We are currently not accepting donations through this site, but you can email us about it
             <a
-              href="mailto:bcicharity@gmail.com"
-            >here</a>
-            if you would like to donate now.
+              href="https://www.paypal.me/beyondcompassion"
+            >Click here to donate through our paypal</a>
           </p>
         </v-flex>
       </v-layout>
