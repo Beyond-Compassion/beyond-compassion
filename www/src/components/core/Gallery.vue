@@ -39,8 +39,23 @@
             :src="`/static/${project.img}`"
             aspect-ratio="1"
             :style="{cursor: 'pointer'}"
+            gradient="to top, rgba(200, 200, 200, 1), rgba(200, 200, 200, .4), rgba(200, 200, 200, 0), rgba(200, 200, 200, 0)"
             @click="handleSelectImg(project.img, project.video)"
-          />
+          >
+            <v-layout
+              justify-end
+              align-end
+              fill-height
+              :style="{ position: 'relative', right: '13px' }"
+            >
+              <v-icon
+                x-large
+                color="primaryDark"
+              >
+                {{ project.video ? 'mdi-video' : 'mdi-camera' }}
+              </v-icon>
+            </v-layout>
+          </v-img>
         </v-flex>
       </transition-group>
     </v-container>
