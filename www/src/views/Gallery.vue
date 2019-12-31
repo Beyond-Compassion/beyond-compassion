@@ -9,7 +9,7 @@
         xs12
         class="text-xs-center"
       >
-        <core-dialog
+        <core-media-dialog
           :current-image="currentImage"
           :video="currentVideo"
         />
@@ -33,7 +33,7 @@
 <script>
 // import * as R from 'ramda'
   import CoreGallery from '@/components/core/Gallery.vue'
-  import CoreDialog from '@/components/core/Dialog.vue'
+  import CoreMediaDialog from '@/components/core/MediaDialog.vue'
 
   export default {
     metaInfo: {
@@ -47,7 +47,7 @@
     },
 
     components: {
-      CoreDialog,
+      CoreMediaDialog,
       CoreGallery
     },
 

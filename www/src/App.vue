@@ -9,7 +9,7 @@
     <core-view />
 
     <!-- <core-footer /> -->
-    <footer-new />
+    <core-footer />
   </v-app>
 </template>
 
@@ -17,8 +17,7 @@
   export default {
     components: {
       CoreDrawer: () => import('@/components/core/Drawer'),
-      // CoreFooter: () => import('@/components/core/Footer'),
-      FooterNew: () => import('@/components/FooterNew'),
+      CoreFooter: () => import('@/components/CoreFooter'),
       CoreJumbotron: () => import('@/components/core/Jumbotron'),
       CoreToolbar: () => import('@/components/core/Toolbar'),
       CoreView: () => import('@/components/core/View')
