@@ -99,6 +99,7 @@
         },
         {
           icon: 'mdi-instagram',
+          link: 'https://www.instagram.com/beyondcompassion/',
           name: 'instagram'
         },
         {
