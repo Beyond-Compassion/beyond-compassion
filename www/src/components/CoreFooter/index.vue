@@ -60,7 +60,7 @@
         > -->
         <a
           class="white--text"
-          href="mailto:bcicharity@gmail.com"
+          href="mailto:alex@bccharity.org"
         >here</a>
         <!-- </router-link> -->
         to get in touch
