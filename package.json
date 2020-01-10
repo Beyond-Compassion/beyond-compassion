@@ -4,6 +4,7 @@
   "description": "website for beyond compassion",
   "main": "index.js",
   "private": true,
+  "engines": { "node": "12.x" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client-dev": "cd www && npm run dev",
